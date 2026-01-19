@@ -1,0 +1,124 @@
+h1 {
+    font-size: 48px;
+}
+h2 {
+    font-size: 32px;
+    font-weight: 600;
+}
+h3 {
+    font-size: 24px;
+    font-weight: 600;
+}
+a {
+    text-decoration: none;
+}
+section {
+    padding: 1rem;
+}
+nav img {
+    stroke: var(--color-orange-500);
+}
+
+#header {
+    display: flex;
+    justify-content: space-between;
+}
+#stallname {
+    width: 40%;
+}
+#actions {
+    display: flex;
+    align-items: end;
+}
+#actions a {
+    padding: 8px;
+    padding-left: 16px;
+    padding-right: 16px;
+    height: fit-content;
+    font-size: 20px;
+    background-color: var(--color-orange-500);
+    color: var(--color-orange-100);
+    border-radius: 9999px;
+}
+#orderhead {
+    margin-bottom: 16px;
+    display: flex;
+    justify-content: space-between;
+}
+#filterbar {
+    font-size: 16px;
+    display: flex;
+    align-items: end;
+}
+#filterbar a {
+    height: fit-content;
+    padding: 8px;
+    padding-left: 12px;
+    padding-right: 12px;
+    border-bottom-style: solid;
+    border-width: 2px;
+    border-color: var(--color-zinc-200);
+    color: var(--color-zinc-400)
+}
+#filterbar a.selected {
+    border-color: var(--color-zinc-600);
+    color: var(--color-zinc-800)
+}
+#orders{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+}
+.order {
+    font-size: 24px;
+    padding: 1rem;
+    border-radius: 1rem;
+    border-style: solid;
+    border-color: var(--color-zinc-200);
+    border-width: 1px;
+    background-color: white;
+}
+.order img {
+    border-radius: 4px;
+}
+.ordertitle {
+    display: flex;
+    justify-content: space-between;
+}
+.ordersubtitle {
+    margin-top: 4px;
+    display: flex;
+    gap: 8px;
+}
+.ordermeta{
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    color: var(--color-zinc-700);
+}
+hr {
+    margin-top: 8px;
+    color: var(--color-zinc-100);
+    border-color: var(--color-zinc-100);
+}
+.orderitems {
+    padding-top: 8px;
+    padding-left: 8px;
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    color: var(--color-zinc-800)
+}
+.status {
+    font-size: 14px;
+    padding: 4px;
+    padding-left: 8px;
+    padding-right: 8px;
+    border-radius: 4px;
+}
+.recieved {
+    color: var(--color-orange-600)
+}
+.preparing {
+    color: var(--color-purple-600)
+}
