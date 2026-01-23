@@ -1,0 +1,32 @@
+/* Based on tailwind-css font sizes */
+
+:root {
+    --font-xs: 0.75rem;
+    --font-sm: 0.875rem;
+    --font-md: 1rem;
+    --font-lg: 1.125rem;
+    --font-xl: 1.25rem;
+    --font-2xl: 1.5rem;
+    --font-3xl: 1.875rem;
+    --font-4xl: 2.25rem;
+    --font-5xl: 3rem;
+    --font-6xl: 3.75rem;
+    --font-7xl: 4.5rem;
+    --font-8xl: 6rem;
+    --font-9xl: 8rem;
+
+    --line-xs: calc(1/0.75);
+    --line-sm: calc(1.25/0.875);
+    --line-md: calc(1.5/1);
+    --line-lg: calc(1.75/1.125);
+    --line-xl: calc(1.75/1.25);
+    --line-2xl: calc(2/1.5);
+    --line-3xl: calc(2.25/1.875);
+    --line-4xl: calc(2.5/2.25);
+    --line-5xl: 1;
+    --line-6xl: 1; 
+    --line-7xl: 1;
+    --line-8xl: 1;
+    --line-9xl: 1;
+    --line-xxl: 1;
+}

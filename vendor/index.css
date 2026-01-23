@@ -1,12 +1,15 @@
 h1 {
-    font-size: 48px;
+    font-size: var(--font-4xl);
+    line-height: var(--line-4xl);
 }
 h2 {
-    font-size: 32px;
+    font-size: var(--font-3xl);
+    line-height: var(--line-3xl);
     font-weight: 600;
 }
 h3 {
-    font-size: 24px;
+    font-size: var(--font-2xl);
+    line-height: var(--line-2xl);
     font-weight: 600;
 }
 a {
@@ -35,7 +38,8 @@ nav img {
     padding-left: 16px;
     padding-right: 16px;
     height: fit-content;
-    font-size: 20px;
+    font-size: var(--font-lg);
+    line-height: var(--line-lg);
     background-color: var(--color-orange-500);
     color: var(--color-orange-100);
     border-radius: 9999px;
@@ -46,7 +50,8 @@ nav img {
     justify-content: space-between;
 }
 #filterbar {
-    font-size: 16px;
+    font-size: var(--font-md);
+    line-height: var(--line-md);
     display: flex;
     align-items: end;
 }
@@ -70,7 +75,8 @@ nav img {
     gap: 8px;
 }
 .order {
-    font-size: 24px;
+    font-size: var(--font-md);
+    line-height: var(--line-md);
     padding: 1rem;
     border-radius: 1rem;
     border-style: solid;
@@ -91,7 +97,6 @@ nav img {
     gap: 8px;
 }
 .ordermeta{
-    font-size: 16px;
     display: flex;
     flex-direction: column;
     color: var(--color-zinc-700);
@@ -104,13 +109,13 @@ hr {
 .orderitems {
     padding-top: 8px;
     padding-left: 8px;
-    font-size: 16px;
     display: flex;
     flex-direction: column;
     color: var(--color-zinc-800)
 }
 .status {
-    font-size: 14px;
+    font-size: var(--font-sm);
+    line-height: var(--line-sm);
     padding: 4px;
     padding-left: 8px;
     padding-right: 8px;
