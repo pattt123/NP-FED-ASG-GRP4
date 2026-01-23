@@ -22,3 +22,9 @@ h1 {
 body {
     padding: 4rem;
 }
+button{
+    padding:0;
+    margin:0;
+    background-color: transparent;
+    border-width:0;
+}
