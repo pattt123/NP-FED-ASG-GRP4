@@ -1,0 +1,65 @@
+#login {
+    padding: 1ram;
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+}
+h1{
+    display:flex;
+    justify-content: center;
+    font-size: var(--font-7xl);
+    color: white;
+    outline-color: black;
+}
+h2{
+        font-weight: 600;
+}
+#head{
+    padding: 4rem;
+    background-image: url("https://eatbook.sg/wp-content/uploads/2023/07/Selamat-Datang-Warong-Pak-Sapari-adam-road-food-centre-1.jpg");
+}
+#menu img{
+    margin:0;
+}
+#login {
+    padding: 8px;
+    padding-left: 16px;
+    padding-right: 16px;
+    height: fit-content;
+    font-size: var(--font-lg);
+    line-height: var(--line-lg);
+    background-color: var(--color-orange-500);
+    color: var(--color-orange-100);
+    border-radius: 9999px;
+}
+body{
+    padding: 0;
+}
+img{
+    border-radius:1rem;
+    width:100%;
+    margin-bottom: 0.5rem;
+}
+#hawkers{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 4rem;
+    gap: 2rem;
+}
+.hawker{
+    
+    font-size: var(--font-md);
+    line-height: var(--line-md);
+    padding: 1.5rem;
+
+    border-radius: 1rem;
+    border-style: solid;
+    border-color: var(--color-zinc-200);
+    border-width: 1px;
+}
+.hawkersubtext{
+    display:flex;
+    flex-direction:column;
+    color: var(--color-zinc-500)
+}
