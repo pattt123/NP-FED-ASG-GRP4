@@ -10,14 +10,14 @@ h1{
     justify-content: center;
     font-size: var(--font-7xl);
     color: white;
-    outline-color: black;
+    padding-bottom: 2rem;
 }
 h2{
         font-weight: 600;
 }
 #head{
-    padding: 4rem;
-    background-image: url("https://eatbook.sg/wp-content/uploads/2023/07/Selamat-Datang-Warong-Pak-Sapari-adam-road-food-centre-1.jpg");
+    padding: 2rem;
+    background-image: url("https://images.lifestyleasia.com/wp-content/uploads/sites/6/2020/02/03154109/hawker-food-hero-image-image-credit-visit-singapore-1600x900.jpg");
 }
 #menu img{
     margin:0;
