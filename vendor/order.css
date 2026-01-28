@@ -55,10 +55,6 @@ header {
 
 .part {
     padding: 1rem;
-    border-radius: 1rem;
-    border-style: solid;
-    border-color: var(--color-zinc-200);
-    border-width: 1px;
     background-color: white;
 }
 #items {
