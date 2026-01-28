@@ -63,3 +63,6 @@ button{
     border-color: var(--color-zinc-200);
     border-width: 1px;
 }
+.hidden {
+    display: none;
+}
