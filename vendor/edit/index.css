@@ -1,3 +1,6 @@
+section {
+    margin: 1rem;
+}
 header {
     margin: 1rem;
     display: flex;
@@ -59,7 +62,9 @@ h2 {
     color: var(--color-orange-600)
 }
 .item span p {
-    color: var(--color-zinc-700)
+    color: var(--color-zinc-700);
+    font-size: var(--font-sm);
+    line-height: var(--line-sm);
 }
 .item a {
     display: flex;
