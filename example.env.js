@@ -8,3 +8,5 @@ export const FIREBASECONFIG = {
     messagingSenderId: "XXXX",
     appId: "XXXX",
 };
+
+export const IMGAPIKEY = "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX"

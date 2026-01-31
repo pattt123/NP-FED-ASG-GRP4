@@ -18,6 +18,6 @@ const orderitems = [
     OrderItem.fromMenuItem(menuitems[0], 2),
     OrderItem.fromMenuItem(menuitems[1], 1)
 ]
-const order = new Order("bdfec476-1f94-4016-89b0-8646c044174c", user.id, stall.id, orderitems)
+const order = new Order("bdfec476-1f94-4016-89b0-8646c044174c", "882-942", stall.id, user.id, orderitems, "recieved")
 order.write()
 console.log(order)

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/css/default.css" rel="stylesheet">
+    <link href="/css/colors.css" rel="stylesheet">
+    <link href="/css/text.css" rel="stylesheet">
+    <link href="./item.css" rel="stylesheet">
+    <script src="/lib/back.js" type="module"></script>
+    <script defer src="./item.js" type="module"></script>
+    <title>myHawkerSG | Edit Item</title>
+</head>
+<body>
+    <nav>
+        <a id="back" href="/vendor/edit/"><img src="https://unpkg.com/lucide-static@latest/icons/chevron-left.svg" width="32px" height="32px"/></a>
+    </nav>
+    <section>
+        <div class="part border">
+            <img id="image" src="https://images.prismic.io/jewishfoodsociety/Znrfs5bWFbowe2JF_Rose_Benjamin_Singaporean_Chicken_Rice_0309.jpg?auto=format,compress" alt="" width="100%">
+            <input id="fileinput" type="file" accept="image/jpeg,image/png,image/gif,image/webp" name="itemimage" value="">
+        </div>
+        <div id="right" class="part border">
+            <form>
+                <span>
+                    <label for="itemname">Name</label>
+                    <input class="input" type="text" name="itemname" id="itemname" placeholder="Item Name">
+                </span>
+                <span>
+                    <label for="itemprice">Price</label>
+                    <input class="input" type="number" name="itemprice" id="price" placeholder="0.00">
+                </span>
+                <span>
+                    <label for="itemdesc">Description</label>
+                     <textarea class="input" name="itemdesc" id="desc" rows="4" cols="50" placeholder="Description for this item"></textarea>
+                </span>
+            </form>
+            <span id="error" class="hidden">Unable to process submission! <span id="errormsg"></span></span>
+            <button id="submit" type="button">Save</button>
+        </div>
+    </section>
+</body>
+</html>

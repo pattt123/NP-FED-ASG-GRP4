@@ -1,0 +1,64 @@
+section {
+    margin: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 8px
+}
+img {
+    border-radius: 1rem;
+    aspect-ratio: 1;
+}
+.part {
+    padding: 1rem;
+}
+#right {
+    grid-column: span 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1rem;
+}
+form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+label {
+    font-size: var(--font-3xl);
+    line-height: var(--line-3xl);
+    font-weight: 500;
+}
+form span {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem
+}
+.input {
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    border-style: solid;
+    border-width: 1px;
+    border-color: var(--color-zinc-400);
+    color: var(--color-zinc-700);
+}
+#error {
+    color: var(--color-red-700);
+    text-align: right;
+    font-size: var(--font-sm);
+    line-height: var(--line-sm);
+}
+button {
+    padding: 8px;
+    padding-left: 16px;
+    padding-right: 16px;
+    height: fit-content;
+    font-size: var(--font-lg);
+    line-height: var(--line-lg);
+    background-color: var(--color-orange-500);
+    color: var(--color-orange-100);
+    border-radius: 9999px;
+}
+textarea {
+    resize: none;
+}
