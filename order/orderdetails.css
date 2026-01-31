@@ -25,12 +25,6 @@ section {
     padding-right: 8px;
     border-radius: 4px;
 }
-.recieved {
-    color: var(--color-orange-600)
-}
-.preparing {
-    color: var(--color-purple-600)
-}
 
 header {
     display: flex;

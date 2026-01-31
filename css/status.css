@@ -1,0 +1,12 @@
+.recieved {
+    color: var(--color-orange-600)
+}
+.preparing {
+    color: var(--color-purple-600)
+}
+.ready {
+    color: var(--color-green-600)
+}
+.completed {
+    color: var(--color-blue-600)
+}
