@@ -53,9 +53,14 @@ h2 {
     padding: 1rem;
     display: flex;
     gap: 8px;
+    justify-content: space-between
+}
+.item div {
+    display: flex;
+    gap: 8px;
 }
 .item span span{
-    color: var(--color-orange-600)
+    color: var(--color-orange-600);
 }
 .item span p {
     color: var(--color-zinc-700);
