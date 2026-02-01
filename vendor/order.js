@@ -28,6 +28,10 @@ async function func() {
     const stallNameElement = document.getElementById("stallname")
     stallNameElement.textContent = stall.name
 
+    const customer = await User.getUserById(order.user)
+    const customerElement = document.getElementById("customername")
+    customerElement.textContent = customer.name
+
     const instructionsElement = document.getElementById("instructions")
     instructionsElement.textContent = order.instructions 
 

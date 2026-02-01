@@ -53,12 +53,12 @@ header {
     padding: 1rem;
     background-color: white;
 }
-#items-head {
+.subhead {
     display: flex;
     justify-content: space-between;
 }
-#items-head span {
-    color: var(--color-zinc-700);
+.subhead span {
+    color: var(--color-zinc-800);
     font-weight: 600;
 }
 .item {
@@ -80,8 +80,6 @@ p {
 .price {
     display: flex;
     justify-content: space-between;
-}
-.priceitem {
     color: var(--color-zinc-700)
 }
 #totalpaid span {
