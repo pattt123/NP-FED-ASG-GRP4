@@ -1,7 +1,5 @@
 import { User } from "/lib/user.js";
-import { MenuItem } from "/lib/menuitem.js";
 import { Stall } from "/lib/stall.js";
-import { IMGAPIKEY } from "/env.js";
 import { Order } from "/lib/order.js";
 
 async function func() {
