@@ -2,6 +2,9 @@ h1 {
     font-size: var(--font-4xl);
     line-height: var(--line-4xl);
 }
+#orderno {
+    font-weight: 700;
+}
 
 h2 {
     font-size: var(--font-xl);
@@ -25,13 +28,6 @@ section {
     padding-right: 8px;
     border-radius: 4px;
 }
-.recieved {
-    color: var(--color-orange-600)
-}
-.preparing {
-    color: var(--color-purple-600)
-}
-
 header {
     display: flex;
     justify-content: space-between;
@@ -57,11 +53,11 @@ header {
     padding: 1rem;
     background-color: white;
 }
-#items {
+#items-head {
     display: flex;
     justify-content: space-between;
 }
-#items span {
+#items-head span {
     color: var(--color-zinc-700);
     font-weight: 600;
 }
@@ -90,4 +86,13 @@ p {
 }
 #totalpaid span {
     font-weight: 600;
+}
+#actions{
+    display: flex;
+    justify-content: space-between;
+    gap: 4px;
+}
+button:hover {
+    text-decoration: underline;
+    cursor:pointer;
 }
