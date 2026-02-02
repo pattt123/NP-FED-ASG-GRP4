@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/css/default.css" rel="stylesheet" />
+    <link href="/css/colors.css" rel="stylesheet" />
+    <link href="/css/text.css" rel="stylesheet" />
+    <link href="./checkout.css" rel="stylesheet" />
+    <script src="/lib/back.js" type="module"></script>
+    <title>myHawkerSG | Checkout</title>
+  </head>
+  <body>
+    <nav>
+      <a id="back" href="/vendor/"
+        ><img
+          src="https://unpkg.com/lucide-static@latest/icons/chevron-left.svg"
+          width="32px"
+          height="32px"
+      /></a>
+    </nav>
+    <header>
+      <h1>Checkout</h1>
+    </header>
+    <section id="content">
+      <div class="col" id="left">
+        <div class="partborder">
+          <div>
+            <h2>Items</h2>
+            <span class="stall-name">Yap's Japanese</span>
+          </div>
+          <div class="menu-item">
+            <div class="item-image">
+              <img
+                src="https://www.marionskitchen.com/wp-content/uploads/2019/12/Japanese-Garlic-Fried-Rice3.jpg"
+              />
+            </div>
+            <div class="item">
+              <div class="item-header">
+                <div id="quanity-name">
+                  <span class="item-quantity">1x</span>
+                  <span class="item-name">Japanese-Fried-Rice</span>
+                </div>
+                <span class="item-price"> $6.70</span>
+              </div>
+              <div class="item-description">Description</div>
+            </div>
+          </div>
+          <div class="menu-item">
+            <div class="item-image">
+              <img
+                src="https://cardamommagazine.com/wp-content/uploads/2021/04/chicken-gyoza-500x500.jpg"
+                alt="Chicken Gyoza"
+              />
+            </div>
+
+            <div class="item">
+              <div class="item-header">
+                <div id="quanity-name">
+                  <span class="item-quantity">1x</span>
+                  <span class="item-name">Chicken-Gyoza</span>
+                </div>
+                <span class="item-price">$6.70</span>
+              </div>
+
+              <div class="item-description">Description</div>
+            </div>
+          </div>
+          <div class="menu-item">
+            <div class="item-image">
+              <img
+                src="https://www.wandercooks.com/wp-content/uploads/2023/09/yakisoba-recipe-4.jpg"
+                alt="Yakisoba"
+              />
+            </div>
+
+            <div class="item">
+              <div class="item-header">
+                <div class="quantity-name">
+                  <span class="item-quantity">1x</span>
+                  <span class="item-name">Yakisoba</span>
+                </div>
+                <span class="item-price">$7.90</span>
+              </div>
+
+              <div class="item-description">Description</div>
+            </div>
+          </div>
+        </div>
+        <div class="partborder">
+          <h2>Special Instructions</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+            culpa qui officia deserunt mollit anim id est laborum.
+          </p>
+        </div>
+      </div>
+      <div class="col">
+        <div class="part border">
+          <h2>Paid Amount</h2>
+          <div id="pricing">
+            <span class="price">
+              <span class="priceitem">Subtotal</span>
+              <span class="priceamt">$12</span>
+            </span>
+            <span class="price">
+              <span class="priceitem">Platform Fee</span>
+              <span class="priceamt">$1.49</span>
+            </span>
+            <span class="price" id="totalpaid">
+              <span class="priceitem">Total Paid</span>
+              <span class="priceamt">$13.49</span>
+            </span>
+          </div>
+        </div>
+        <div id="placeOrder">Place Order</div>
+      </div>
+    </section>
+  </body>
+</html>
