@@ -58,6 +58,7 @@ button {
     background-color: var(--color-orange-500);
     color: var(--color-orange-100);
     border-radius: 9999px;
+    cursor: pointer
 }
 textarea {
     resize: none;

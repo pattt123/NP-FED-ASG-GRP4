@@ -48,6 +48,16 @@ async function func() {
         if (!errorElement.classList.contains("hidden")) {
             errorElement.classList.add("hidden")
         }
+        if (submit.disabled) {
+            const errormsgElement = document.getElementById("errormsg")
+            errormsgElement.textContent = "Slow down!"
+            errorElement.classList.remove("hidden")
+            return;
+        }
+        submit.disabled = true
+        setTimeout(() => {
+            submit.disabled = false;
+        }, 1000*10)
         const price = parseFloat(priceElement.value);
         if (isNaN(price)) {
             const errormsgElement = document.getElementById("errormsg")
@@ -83,9 +93,8 @@ async function func() {
         }
         
         const newMenuItem = new MenuItem(id, stall.id, name, desc, image, price)
-        newMenuItem.write().then(() => {
-            window.document.href = "/vendor/edit/"
-        })
+        await newMenuItem.write()
+        window.location.href = "/vendor/edit/"
     })
 }
 
