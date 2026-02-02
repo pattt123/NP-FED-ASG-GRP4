@@ -14,10 +14,28 @@ async function func() {
     }
     const stallNameElement = document.getElementsByTagName("h1")[0]
     stallNameElement.textContent = stall.name
+    
+    const params = new URLSearchParams(window.location.search);
+    let filter = params.get("filter") ?? "active"
+    if (filter != "active" && filter != "received" && filter != "preparing" && filter != "ready" && filter != "completed") {
+        filter = "active"
+    }
 
+    const selectedElement = document.getElementById(filter)
+    if (selectedElement != undefined) {
+        selectedElement.classList.add("selected")
+    }
+    
     const orders = await stall.getAllOrders()
     let orderComponents = ""
     for (const order of orders) {
+        if (filter == "active") {
+            if (order.status == "completed") {
+                continue;
+            }
+        } else if (order.status != filter) {
+            continue;
+        }
         let customer = await User.getUserById(order.user);
         if (customer == undefined) {continue;}
         let component = orderComponent.replace("%%id%%", order.id)
