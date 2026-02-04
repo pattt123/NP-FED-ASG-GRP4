@@ -9,6 +9,7 @@
     <link href="/css/status.css" rel="stylesheet">
     <link href="./history.css" rel="stylesheet" />
     <script src="/lib/back.js" type="module"></script>
+    <script src="./history.js" type="module"></script>
     <title>myHawkerSG | Order History</title>
   </head>
   <body>
@@ -29,62 +30,13 @@
       <div id="orderhead">
         <h2>Orders</h2>
         <div id="filterbar">
-          <a href="." class="selected">All</a>
-          <a href=".">Active</a>
-          <a href=".">Completed</a>
+          <a class="selected">All</a>
+          <a>Active</a>
+          <a>Completed</a>
         </div>
       </div>
       <div id="orders">
-        <div class="order border">
-          <div>
-            <div class="ordertitle">
-              <h3>Order #192-168</h3>
-              <span class="status completed">COMPLETED</span>
-            </div>
-            <div class="ordersubtitle">
-              <img
-                src="https://images.prismic.io/jewishfoodsociety/Znrfs5bWFbowe2JF_Rose_Benjamin_Singaporean_Chicken_Rice_0309.jpg?auto=format,compress"
-                width="40px"
-                height="40px"
-              />
-              <div class="ordermeta">
-                <span>Alexander Koh</span>
-                <span>6 items | $ 12.99</span>
-              </div>
-            </div>
-            <hr />
-            <div class="orderitems">
-              <span>1x Half Roasted Chicken</span>
-              <span>3x Chicken Rice</span>
-              <span>1x Large Vegetables</span>
-            </div>
-          </div>
-        </div>
-        <div class="order border">
-          <div>
-            <div class="ordertitle">
-              <h3>Order #192-167</h3>
-              <span class="status active">ACTIVE</span>
-            </div>
-            <div class="ordersubtitle">
-              <img
-                src="https://images.prismic.io/jewishfoodsociety/Znrfs5bWFbowe2JF_Rose_Benjamin_Singaporean_Chicken_Rice_0309.jpg?auto=format,compress"
-                width="40px"
-                height="40px"
-              />
-              <div class="ordermeta">
-                <span>Alexander Koh</span>
-                <span>6 items | $ 12.99</span>
-              </div>
-            </div>
-            <hr />
-            <div class="orderitems">
-              <span>1x Half Roasted Chicken</span>
-              <span>3x Chicken Rice</span>
-              <span>1x Large Vegetables</span>
-            </div>
-          </div>
-        </div>
+        <!-- Orders will be loaded here -->
       </div>
     </section>
   </body>
