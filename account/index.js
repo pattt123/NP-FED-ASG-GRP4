@@ -1,6 +1,11 @@
 import { User } from "../lib/user.js";
 
 const saveBtn = document.getElementById("saveBtn");
+const orderHistory = document.getElementById("order_history");
+
+orderHistory.addEventListener("click", async () => {
+    window.location.href = "/order/history.html";
+});
 
 saveBtn.addEventListener("click", async () => {
     console.log("Save button clicked");
@@ -30,7 +35,7 @@ saveBtn.addEventListener("click", async () => {
     if (newNameInput !== "") user.name = newNameInput;
 
     // 💾 save to Firestore
-    await user.write();
+    //await user.write();
 
     alert("Account updated successfully!");
 });
