@@ -1,0 +1,26 @@
+#left {
+    grid-column: span 3;
+}
+button {
+    background-color: var(--color-green-500);
+    color: var(--color-green-100);
+}
+
+#h1 {
+    font-weight: 900;
+    color: black;
+    font-size: 35px;
+}
+
+#back {
+    background-color: #94a3b8;
+}
+
+#header {
+    background-color: #94a3b8;
+}
+#name {
+    display: flex;
+    justify-content: right;
+    
+}
