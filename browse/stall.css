@@ -1,0 +1,119 @@
+#head{
+    padding-top:2rem;
+    padding-left:2rem;
+    padding-right:2rem;
+    display:flex;
+    justify-content:space-between;
+}
+
+#tray{
+    padding: 8px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin:0.2rem;
+    height: fit-content;
+    font-size: var(--font-md);
+    line-height: var(--line-lg);
+    background-color: #3b5837;
+    color: White;
+    border-radius: 9999px;
+}
+hr {
+    margin-left:1rem;
+    margin-right:1rem;
+    margin-bottom:1rem;
+    border-style: solid;
+    border-color: var(--color-zinc-500);
+    border-width: 1px;
+    box-shadow: 0 2px 4px var(--color-zinc-300);
+}
+#tray:hover{
+  color:#75B06F
+}
+#stalldetails{
+    padding:2rem;
+    padding-top:1rem;
+    padding-left:4rem;
+    display:flex;
+    gap:1rem;
+    color:#75B06F;
+
+}
+#stallimage img{
+    width:7rem;
+    height:7rem;
+}
+h3{
+    display:flex;
+    align-items:center;
+    padding:1rem 0 0.5rem 0;
+    font-size:var(--font-2xl);
+    color:#3b5837;
+    border-radius:1rem;
+}
+
+body{
+    padding:0;
+}
+#dishes{
+    padding-top:1rem;
+    padding-left:1rem;
+    padding-right:1rem;
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+.dish{
+    font-size: var(--font-md);
+    line-height: var(--line-md);
+    padding: 1.5rem;
+    border-radius: 1rem;
+    border-style: solid;
+    border-color: transparent;
+    border-width: 1px;
+    box-shadow:5px 5px 10px var(--color-zinc-300);
+}
+.dish:hover{
+  border-color:#3b5837;
+  transition: 0.3s;
+}
+.dishtext{
+    display:flex;
+    justify-content:space-between;
+    color:#3b5837
+}
+#subtext{
+    display:flex;
+    flex-direction:column;
+    padding-top:0.5rem;
+}
+#price{
+    font-size:var(--font-xl);
+    display:flex;
+    align-items:flex-end;
+    color:#75B06F
+}
+.dishsubtext{
+    display:flex;
+    padding-left:1rem;
+    color: var(--color-zinc-500)
+}
+#details{
+    display:flex;
+}
+.images img{
+    padding-top:0.5rem;
+    width:7rem;
+    height:7rem;
+}
+#dishbottom{
+    display:flex;
+    justify-content:space-between
+}
+#addtocart img{
+    padding-top:2.5rem;
+    padding-right:1rem;
+    width:1.5rem;
+}
+
+
