@@ -6,21 +6,62 @@ button {
     color: var(--color-green-100);
 }
 
-#h1 {
-    font-weight: 900;
-    color: black;
-    font-size: 35px;
+h1 {
+    font-weight: 700;
+    font-size: var(--font-4xl);
+    line-height: var(--line-4xl);
+}
+h2 {
+    font-weight: 600;
 }
 
-#back {
-    background-color: #94a3b8;
-}
+header {
+    display: flex;
+    justify-content: space-between;
 
-#header {
-    background-color: #94a3b8;
+}
+header a {
+    padding: 8px;
+    padding-left: 16px;
+    padding-right: 16px;
+    height: fit-content;
+    font-size: var(--font-lg);
+    line-height: var(--line-lg);
+    background-color: var(--color-orange-500);
+    color: var(--color-orange-100);
+    border-radius: 9999px;
+    text-decoration: none;
+}
+section {
+    padding: 1rem;
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
 #name {
     display: flex;
     justify-content: right;
     
+}
+#saveBtn {
+    padding: 8px;
+    padding-left: 16px;
+    padding-right: 16px;
+    height: fit-content;
+    font-size: var(--font-lg);
+    line-height: var(--line-lg);
+    background-color: var(--color-orange-500);
+    color: var(--color-orange-100);
+    border-radius: 9999px;
+    text-decoration: none;
+    width: fit-content;
+}
+
+input {
+    padding: 4px;
+    border-radius: 4px;
+    border-width: 1px;
+    border-style: solid;
+    margin: 1px;
 }
