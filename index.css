@@ -8,28 +8,12 @@
     padding: 5px 10px;
     margin-bottom: 2rem;
 }
-#hawk:hover{
-    color:#75B06F
-}
-#history:hover{
-    color:#75B06F
-}
-#contact:hover{
+
+#orderhistory:hover{
     color:#75B06F
 }
 #login:hover{
     color:#75B06F
-}
-.hawker:hover{
-  border-color:#3b5837;
-  transition: 0.3s;
-}
-hr {
-    margin-top: 1rem;
-    border-style: solid;
-    border-color: var(--color-zinc-500);
-    border-width: 1px;
-    box-shadow: 0 2px 4px var(--color-zinc-300);
 }
 
 .search-container input {
@@ -55,35 +39,14 @@ hr {
     color: #75B06F;
 }
 
-
 nav {
     display: flex;
     justify-content: space-between;
 }
 
-#nav-bar {
-    display: flex;
-    justify-content: space-evenly;
-    gap: 2rem;
-}
 
-#history {
-    font-size: var(--font-xl)
-}
-
-#contact {
-    font-size: var(--font-xl)
-}
-
-#hawk {
-    font-size: var(--font-xl)
-}
 button{
     cursor:pointer;
-}
-
-#nav-bar button {
-    color: #3b5837;
 }
 
 h1 {
@@ -102,10 +65,17 @@ h2 {
     padding: 1.5rem 2rem 0rem 2rem;
 }
 
-#menu img {
-    padding-top: 0;
-    width: 2.5rem;
-    height: 2.5rem;
+#orderhistory{
+    padding: 8px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin:0.2rem;
+    height: fit-content;
+    font-size: var(--font-md);
+    line-height: var(--line-lg);
+    background-color: #3b5837;
+    color: White;
+    border-radius: 5rem;;
 }
 
 #login {
@@ -119,7 +89,7 @@ h2 {
     line-height: var(--line-lg);
     background-color: #3b5837;
     color: White;
-    border-radius: 9999px;
+    border-radius: 5rem;
 }
 
 body {
@@ -153,13 +123,11 @@ img {
     border-top-right-radius: 2rem;
 }
 
-
-
 #hawkers {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    padding: 2rem;
-    gap: 2rem;
+    padding: 1rem;
+    gap: 1.5rem;
 }
 
 .hawker {
