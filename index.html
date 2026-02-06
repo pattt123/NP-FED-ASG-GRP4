@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,145 +7,42 @@
     <link href="/css/colors.css" rel="stylesheet">
     <link href="/css/text.css" rel="stylesheet">
     <link href="./index.css" rel="stylesheet">
-    <title>myHawkerSG | Vendor Home</title>
+    <script src="/lib/back.js" type="module"/></script>
+    <script src="./index.js" type="module"/></script>
+    <title>myHawkerSG | Account </title>
 </head>
-
 <body>
+    <nav id="back">
+        <a href="javascript:history.back()">Back</a>
+    </nav>
+    <header>
+        <h1>Account</h1>
+        <button id="order_history" type="button">Order History</button>
+    </header>
+    <section id="header">
+        <div>
+            <h2>Username :</h2> <input type="username" placeholder="username" id="username">
+            <h2>Password :</h2> <input type="password" placeholder="password" id="password">
 
-    <section id="head">
-        <nav>
-            <button id="menu" href="../"><img src="https://cdn-icons-png.flaticon.com/128/1828/1828859.png" width="32px"
-                    height="32px" /></button>
+            <section>
+                <h2>Change Password:</h2>
+                <label for="current_password">Current Password:</label>
+                <input type="password" placeholder="current password" id="current_password">
+                <div></div>
+                <label for="new_password">New Password:</label>
+                <input type="password" placeholder="new password" id="new_password">
+                <div id="name">
+                    <label for="new_name">New Name:</label>
+                    <input type="new name" placeholder="new name" id="new_name">
+                </div> 
+                <button id="saveBtn">Save Changes</button>
+            </section>
+            
 
-
-            <div id="loginsignup">
-                <button id="login">Login</button>
-                <button id="login">Orders</button>
-            </div>
-        </nav>
-        <h1>myHawkerSG</h1>
-        <div class="search-container">
-            <input type="text" id="searchInput" placeholder="Search...">
-            <button onclick="performSearch()">Search</button>
-        </div>
-
-        <div id="nav-bar">
-            <button id="hawk">Hawkers</button>
-            <button id="history"> Order History</button>
-            <button id="contact">Contact Us</button>
-        </div>
-        <hr>
-    </section>
-
-    <section id="hawkers">
-        <div class="hawker">
-            <div id="hawkerimages">
-                <img id="imagetopleft"
-                    src="https://eatbook.sg/wp-content/uploads/2021/08/rare-hawker-dishes-oyster-cake.jpg" alt="dish">
-                <img id="imagetopright"
-                    src="https://cdn.shopify.com/s/files/1/1817/3115/files/singapore-dish.jpg?v=1576553778" alt="dish">
-                <img src="https://threebestrated.sg/images/BukitPanjangHawkerCentreandMarket-BukitPanjang-West.jpeg"
-                    alt="dish">
-                <img src="https://cdn2.hubspot.net/hub/517197/blog-files/Gina_Romero/Aug11_for-the-love-of-food-our-favourite-singapore-hawker-centres/14640281210_29defb0766_b.jpg"
-                    alt="dish">
-            </div>
-            <div class="hawkertext">
-                <h2> Old Airport Road Food Centre</h2>
-                <div class="hawkersubtext">
-                    <span>27 Old Airport Road, S101010</span>
-                    <span>XX Stalls</span>
-                    <span>Operating Hours: 7am - 9pm</span>
-                </div>
-            </div>
-        </div>
-        <div class="hawker">
-            <div id="hawkerimages">
-                <img id="imagetopleft"
-                    src="https://eatbook.sg/wp-content/uploads/2021/08/rare-hawker-dishes-oyster-cake.jpg" alt="dish">
-                <img id="imagetopright"
-                    src="https://cdn.shopify.com/s/files/1/1817/3115/files/singapore-dish.jpg?v=1576553778" alt="dish">
-                <img src="https://threebestrated.sg/images/BukitPanjangHawkerCentreandMarket-BukitPanjang-West.jpeg"
-                    alt="dish">
-                <img src="https://cdn2.hubspot.net/hub/517197/blog-files/Gina_Romero/Aug11_for-the-love-of-food-our-favourite-singapore-hawker-centres/14640281210_29defb0766_b.jpg"
-                    alt="dish">
-            </div>
-            <div class="hawkertext">
-                <h2> Old Airport Road Food Centre</h2>
-                <div class="hawkersubtext">
-                    <span>27 Old Airport Road, S101010</span>
-                    <span>XX Stalls</span>
-                    <span>Operating Hours: 7am - 9pm</span>
-                </div>
-            </div>
-        </div>
-        <div class="hawker">
-            <div id="hawkerimages">
-                <img id="imagetopleft"
-                    src="https://eatbook.sg/wp-content/uploads/2021/08/rare-hawker-dishes-oyster-cake.jpg" alt="dish">
-                <img id="imagetopright"
-                    src="https://cdn.shopify.com/s/files/1/1817/3115/files/singapore-dish.jpg?v=1576553778" alt="dish">
-                <img src="https://threebestrated.sg/images/BukitPanjangHawkerCentreandMarket-BukitPanjang-West.jpeg"
-                    alt="dish">
-                <img src="https://cdn2.hubspot.net/hub/517197/blog-files/Gina_Romero/Aug11_for-the-love-of-food-our-favourite-singapore-hawker-centres/14640281210_29defb0766_b.jpg"
-                    alt="dish">
-            </div>
-            <div class="hawkertext">
-                <h2> Old Airport Road Food Centre</h2>
-                <div class="hawkersubtext">
-                    <span>27 Old Airport Road, S101010</span>
-                    <span>XX Stalls</span>
-                    <span>Operating Hours: 7am - 9pm</span>
-                </div>
-            </div>
         </div>
     </section>
-
-    <footer class="footer">
-        <div class="footer-container">
-
-            <!-- About -->
-            <div class="footer-section">
-                <h3>myHawkerSG</h3>
-                <p>
-                    Your favourite hawker flavours, all in one place.
-                    Order, collect, and enjoy authentic local food.
-                </p>
-            </div>
-
-            <!-- Quick Links -->
-            <div class="footer-section">
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Stalls</a></li>
-                    <li><a href="#">Menu</a></li>
-                    <li><a href="#">My Tray</a></li>
-                </ul>
-            </div>
-
-            <!-- Contact -->
-            <div class="footer-section">
-                <h4>Contact Us</h4>
-                <p>📍 123 Hawker Street, Singapore</p>
-                <p>📞 +65 6123 4567</p>
-                <p>✉️ support@myhawkerhub.sg</p>
-            </div>
-
-            <!-- Opening Hours -->
-            <div class="footer-section">
-                <h4>Opening Hours</h4>
-                <p>Mon - Fri: 8am - 9pm</p>
-                <p>Sat - Sun: 7am - 10pm</p>
-            </div>
-
-        </div>
-
-        <!-- Bottom Bar -->
-        <div class="footer-bottom">
-            <p>© 2026 HawkerHub. All rights reserved.</p>
-        </div>
-    </footer>
 
 </body>
 
-</html>
+<!--References
+//Source: OpenAI. (2026). ChatGPT (GPT-5.2) [Large language model]. https://chat.openai.com/ -->
