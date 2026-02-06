@@ -49,12 +49,21 @@ nav img {
     margin-bottom: 16px;
     display: flex;
     justify-content: space-between;
+    gap: 1rem
 }
 #filterbar {
-    font-size: var(--font-md);
-    line-height: var(--line-md);
+    font-size: var(--font-xs);
+    line-height: var(--line-xs);
     display: flex;
     align-items: end;
+    flex-wrap: wrap;
+    justify-content: end;
+}
+@media (width >= 48rem) { 
+    #filterbar{
+        font-size: var(--font-md);
+        line-height: var(--line-md);
+    }
 }
 #filterbar a {
     height: fit-content;
@@ -72,8 +81,12 @@ nav img {
 }
 #orders{
     display: grid;
-    grid-template-columns: 1fr 1fr;
     gap: 8px;
+}
+@media (width >= 48rem) { 
+    #orders {
+        grid-template-columns: 1fr 1fr;
+    }
 }
 .order {
     font-size: var(--font-md);

@@ -5,6 +5,7 @@ header {
     margin: 1rem;
     display: flex;
     justify-content: space-between;
+    gap: 1rem;
 }
 a {
     text-decoration: none;
@@ -19,6 +20,7 @@ header a {
     background-color: var(--color-orange-500);
     color: var(--color-orange-100);
     border-radius: 9999px;
+    text-wrap: nowrap;
 }
 img {
     border-radius: 8px;
@@ -36,8 +38,14 @@ img {
     color: var(--color-zinc-700);
 }
 h1 {
-    font-size: var(--font-4xl);
-    line-height: var(--line-4xl);
+    font-size: var(--font-2xl);
+    line-height: var(--line-2xl);
+}
+@media (width >= 48rem) { 
+    h1 {
+        font-size: var(--font-4xl);
+        line-height: var(--line-4xl);
+    }
 }
 h2 {
     font-size: var(--font-xl);
@@ -46,8 +54,12 @@ h2 {
 }
 #items {
     display: grid;
-    grid-template-columns: 1fr 1fr;
     gap: 8px;
+}
+@media (width >= 48rem) { 
+    #items{
+        grid-template-columns: 1fr 1fr;
+    }
 }
 .item {
     padding: 1rem;
