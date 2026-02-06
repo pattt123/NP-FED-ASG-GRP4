@@ -35,13 +35,17 @@ header {
 }
 #content {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
     gap: 8px;
 }
-
-#left {
-    grid-column: span 2;
+@media (width >= 48rem) { 
+    #content{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    #left {
+        grid-column: span 2;
+    }
 }
+
 .col {
     display: flex;
     flex-direction: column;
