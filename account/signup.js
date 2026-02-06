@@ -4,29 +4,31 @@ import { User } from "../lib/user.js"
 let buttonElement = document.getElementById('signup');
 
 buttonElement.addEventListener('click', async () => {
-    console.log("Button was clicked")
 
     // 2. Get values from inputs (.value)
     let name = document.getElementById("full_name").value
     let username = document.getElementById("username").value
     let password = document.getElementById("password").value
-    let confirmPassword = document.getElementById("new_password").value
+    let confirmPassword = document.getElementById("confirm_password").value
     let dob = document.getElementById("dob").value
-     
+
+    let message = document.getElementById("message")
+    
     if (!name || !username || !password || !confirmPassword || !dob) {
-        console.log("Please fill in all fields.");
+        message.textContent = "Please fill in all fields.";
         return;
     }
 
     // 3. Get user by username, and ensure its undefined.
-    //user = await User.getUserByUsername("bob")
-    //if (user === username) {
-      //  console.log("User already exsits!")
-    //}
+    let user = await User.getUserByUsername("bob")
+    if (user === username) {
+        message.textContent = "User already exsits!";
+    }
 
     // 4. Make sure password matches in both first and re-enter field
     if (password !== confirmPassword) {
-        console.log("Passwords do not match.");
+        message.textContent = "Passwords are not matching!";
+        return;
     }
     
     // 5. Make sure age from date of birth is > 13
