@@ -1,0 +1,61 @@
+import { Stall } from "/lib/stall.js";
+import { MenuItem } from "/lib/menuitem.js";
+
+async function loadStallPage() {
+    // Step 1: Get the ID from URL params FIRST
+    const params = new URLSearchParams(window.location.search);
+    let id = params.get("id");
+
+    // Step 2: Get the stall data
+    let stall = await Stall.getStallById(id);
+    // Step 3: Check if stall exists
+    if (!stall) {
+        window.history.back();
+        return;  // Added return to stop execution
+    }
+
+    // Build stall details HTML
+    let detailsHTML = `
+        <span id="stallimage">
+            <img src="${stall.image}" alt="${stall.name}">
+        </span>
+        <div>
+            <h3 id="name">${stall.name}</h3>
+            <span>${stall.description}</span>
+        </div>
+    `;
+
+    // Build dishes HTML
+    let dishesHTML = "";
+    stall.menuitems.forEach(menuitem => {
+        dishesHTML += `
+        <div class="dish">
+            <div class="dishtext">
+                <h2>${menuitem.name}</h2>
+                <span id="like"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiMwMDAwMDAiIHN0cm9rZS13aWR0aD0iMS4yNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS10aHVtYnMtdXAtaWNvbiBsdWNpZGUtdGh1bWJzLXVwIj48cGF0aCBkPSJNMTUgNS44OCAxNCAxMGg1LjgzYTIgMiAwIDAgMSAxLjkyIDIuNTZsLTIuMzMgOEEyIDIgMCAwIDEgMTcuNSAyMkg0YTIgMiAwIDAgMS0yLTJ2LThhMiAyIDAgMCAxIDItMmgyLjc2YTIgMiAwIDAgMCAxLjc5LTEuMTFMMTIgMmEzLjEzIDMuMTMgMCAwIDEgMyAzLjg4WiIvPjxwYXRoIGQ9Ik03IDEwdjEyIi8+PC9zdmc+" alt="image"></span>
+            </div>
+            <div id="details">
+                <section class="images">
+                    <img src="${menuitem.image}" alt="photo of ${menuitem.name}">
+                </section> 
+                <div class="dishsubtext">
+                    <span id="subtext">
+                        <span id="description">${menuitem.description}</span>
+                        <section id="dishbottom">
+                            <span id="price">$${menuitem.price}</span>
+                            <button id="addtocart-${menuitem.id}"><img src="https://cdn-icons-png.flaticon.com/128/3917/3917172.png" alt="add to cart"></button>
+                        </section>
+                    </span>
+                </div>    
+            </div>       
+        </div>
+        `;
+    });
+
+    // Insert into containers
+    document.getElementById("dishes").innerHTML = dishesHTML;
+    document.getElementById("stalldetails").innerHTML = detailsHTML;
+}
+
+// Call the function when page loads
+document.addEventListener('DOMContentLoaded', loadStallPage);
