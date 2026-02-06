@@ -89,3 +89,13 @@ p {
 #totalpaid span {
     font-weight: 600;
 }
+
+/* Empty order state */
+.empty-order {
+    padding: 1rem;
+    text-align: center;
+    color: var(--color-zinc-600);
+}
+#totalpaid span {
+    font-weight: 600;
+}

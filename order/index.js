@@ -15,9 +15,10 @@ async function loadOrder() {
         return;
     }
 
-    // Get order ID from URL parameters
+    // Get order ID and optional success flag from URL parameters
     const urlParams = new URLSearchParams(window.location.search);
     const orderId = urlParams.get('id');
+    const showSuccess = urlParams.get('success') === '1';
     if (!orderId) {
         window.location.href = "/";
         return;
@@ -30,37 +31,46 @@ async function loadOrder() {
         return;
     }
 
-    // Update order number in header
-    document.querySelector("header h1").textContent = `Order #${order.orderNumber}`;
+    // Update order number and header
+    const orderNumber = order.number || order.orderNumber || (order.id ? order.id.slice(-6) : '—');
+    const headerH1 = document.querySelector("header h1");
+    if (headerH1) headerH1.textContent = `Order #${orderNumber}`;
 
     // Update status
     const statusElement = document.querySelector("header .status");
-    statusElement.textContent = order.status.toUpperCase();
-    statusElement.className = `status ${order.status}`;
+    if (statusElement) {
+        statusElement.textContent = (order.status || '').toString().toUpperCase();
+        statusElement.className = `status ${order.status || ''}`;
+    }
 
     // Get stall information
-    const stall = await Stall.getStallById(order.stallId);
-    if (stall) {
-        // Update stall name in items section
-        document.querySelector("#items span").textContent = stall.name;
+    const stallId = order.stallId || order.stall || '';
+    const stall = stallId ? await Stall.getStallById(stallId) : undefined;
+    const itemsHeaderSpan = document.querySelector("#items span");
+    if (stall && itemsHeaderSpan) {
+        itemsHeaderSpan.textContent = stall.name;
     }
 
     // Display order items
     const itemsContainer = document.querySelector("#items");
-    let itemsHtml = `<h2>Items</h2><span>${stall ? stall.name : 'Stall'}</span>`;
-    for (const orderItem of order.orderitems) {
-        itemsHtml += `
-            <div class="item">
-                <span><span class="itemqty">${orderItem.qty}x</span> ${orderItem.name}</span>
-                <span class="itemprice">$${orderItem.price.toFixed(2)}</span>
-            </div>
-        `;
+    if (itemsContainer) {
+        let itemsHtml = `<h2>Items</h2><span>${stall && stall.name ? stall.name : 'Stall'}</span>`;
+        for (const orderItem of (order.orderitems || [])) {
+            const price = typeof orderItem.price === 'number' ? orderItem.price : 0;
+            const qty = orderItem.qty || 0;
+            itemsHtml += `
+                <div class="item">
+                    <span><span class="itemqty">${qty}x</span> ${orderItem.name}</span>
+                    <span class="itemprice">$${price.toFixed(2)}</span>
+                </div>
+            `;
+        }
+        itemsContainer.innerHTML = itemsHtml;
     }
-    itemsContainer.innerHTML = itemsHtml;
 
     // Display special instructions
     const instructionsElement = document.querySelector("#left .part.border p");
-    instructionsElement.textContent = order.specialInstructions || "No special instructions.";
+    if (instructionsElement) instructionsElement.textContent = order.specialInstructions || "No special instructions.";
 
     // Calculate and display pricing
     const subtotal = order.calculateSubtotal();
@@ -71,8 +81,14 @@ async function loadOrder() {
     document.querySelector("#pricing .price:nth-child(2) .priceamt").textContent = `$${fee.toFixed(2)}`;
     document.querySelector("#totalpaid .priceamt").textContent = `$${total.toFixed(2)}`;
 
-    // Show success popup
-    alert("Order placed successfully");
+    // Show success popup only when redirected from checkout
+    if (showSuccess) {
+        try {
+            alert("Order Successful");
+        } catch (e) {
+            console.log('Unable to show success alert', e);
+        }
+    }
 }
 
 loadOrder();

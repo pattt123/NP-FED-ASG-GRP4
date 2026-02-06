@@ -32,16 +32,7 @@ header {
     gap: 20px;
 }
 
-.partborder {
-    padding: 1rem;
-    border-radius: 1rem;
-    border-style: solid;
-    border-color: var(--color-zinc-200);
-    border-width: 1px;
-    background-color: white;
-    flex-grow: 1;
-}
-
+.partborder,
 .part {
     padding: 1rem;
     border-radius: 1rem;
@@ -145,6 +136,20 @@ header {
     margin-top: auto;
     align-self: center;
     width: fit-content;
+}
+
+/* Disabled state helper for place order (checkout.js) */ 
+#placeOrder.disabled {
+    opacity: 0.5;
+    pointer-events: none;
+    background-color: var(--color-green-400);
+}
+
+/* Empty cart message (checkout.js) */
+.empty-cart {
+    text-align: center;
+    padding: 1.5rem;
+    color: var(--color-zinc-600);
 }
 
 #instructions {

@@ -24,36 +24,45 @@ async function loadOrderHistory() {
     // Function to render orders
     const renderOrders = async () => {
         const ordersContainer = document.getElementById('orders');
+        if (!ordersContainer) return;
         ordersContainer.innerHTML = '';
+
+        if (!filteredOrders || filteredOrders.length === 0) {
+            ordersContainer.insertAdjacentHTML('beforeend', `
+                <div class="empty-orders">
+                    <p>No orders yet. Your past orders will appear here.</p>
+                </div>
+            `);
+            return;
+        }
 
         for (const order of filteredOrders) {
             const stall = await Stall.getStallById(order.stall);
 
-            // Calculate total items and subtotal
-            const totalItems = order.orderitems.reduce((sum, item) => sum + item.qty, 0);
-            const subtotal = order.calculateSubtotal();
-            const total = subtotal + (subtotal * 0.1); // Including fee
+            const totalItems = (order.orderitems || []).reduce((sum, item) => sum + (item.qty || 0), 0);
+            const subtotal = typeof order.calculateSubtotal === 'function' ? order.calculateSubtotal() : 0;
+            const total = subtotal + (subtotal * 0.1);
 
-            // Get first 3 items for display
-            const displayItems = order.orderitems.slice(0, 3).map(item => `${item.qty}x ${item.name}`).join(', ');
-            const moreItems = order.orderitems.length > 3 ? '...' : '';
+            const displayItems = (order.orderitems || []).slice(0, 3).map(item => `${item.qty}x ${item.name}`).join(', ');
+            const moreItems = (order.orderitems || []).length > 3 ? '...' : '';
 
-            // Determine status display
-            const statusText = order.status === 'completed' ? 'COMPLETED' : 'ACTIVE';
             const statusClass = order.status === 'completed' ? 'completed' : 'active';
+            const statusText = order.status === 'completed' ? 'COMPLETED' : 'ACTIVE';
+
+            const orderNumber = order.number || (order.id ? order.id.slice(-6) : '—');
 
             const orderHtml = `
                 <a href="/order/index.html?id=${order.id}" class="order-link">
                     <div class="order border">
                         <div>
                             <div class="ordertitle">
-                                <h3>Order #${order.number}</h3>
+                                <h3>Order #${orderNumber}</h3>
                                 <span class="status ${statusClass}">${statusText}</span>
                             </div>
                             <div class="ordersubtitle">
-                                <img src="${stall ? stall.image : 'https://via.placeholder.com/40'}" width="40px" height="40px" />
+                                <img src="${stall && stall.image ? stall.image : 'https://via.placeholder.com/40'}" width="40" height="40" alt="stall image" />
                                 <div class="ordermeta">
-                                    <span>${stall ? stall.name : 'Unknown Stall'}</span>
+                                    <span>${stall && stall.name ? stall.name : 'Unknown Stall'}</span>
                                     <span>${totalItems} items | $${total.toFixed(2)}</span>
                                 </div>
                             </div>
@@ -73,16 +82,16 @@ async function loadOrderHistory() {
     await renderOrders();
 
     // Set up filter functionality
-    const filterLinks = document.querySelectorAll('#filterbar a');
+    const filterLinks = Array.from(document.querySelectorAll('#filterbar a'));
     filterLinks.forEach(link => {
+        link.setAttribute('href', '#');
+        link.setAttribute('role', 'button');
         link.addEventListener('click', async (e) => {
             e.preventDefault();
-            // Remove selected class from all
             filterLinks.forEach(l => l.classList.remove('selected'));
-            // Add to clicked
             link.classList.add('selected');
 
-            const filterText = link.textContent.toLowerCase();
+            const filterText = (link.textContent || '').trim().toLowerCase();
             currentFilter = filterText;
 
             if (filterText === 'all') {
@@ -91,6 +100,8 @@ async function loadOrderHistory() {
                 filteredOrders = orders.filter(order => order.status !== 'completed');
             } else if (filterText === 'completed') {
                 filteredOrders = orders.filter(order => order.status === 'completed');
+            } else {
+                filteredOrders = orders;
             }
 
             await renderOrders();
