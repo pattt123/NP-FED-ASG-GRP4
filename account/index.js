@@ -41,4 +41,5 @@ saveBtn.addEventListener("click", async () => {
 });
 
 //References
-//Source: OpenAI. (2026). ChatGPT (GPT-4.1) [Large language model]. https://chat.openai.com/
+
+//Source: OpenAI. (2026). ChatGPT (GPT-5.2) [Large language model]. https://chat.openai.com/
