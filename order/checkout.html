@@ -29,63 +29,7 @@
             <h2>Items</h2>
             <span class="stall-name">Yap's Japanese</span>
           </div>
-          <div class="menu-item">
-            <div class="item-image">
-              <img
-                src="https://www.marionskitchen.com/wp-content/uploads/2019/12/Japanese-Garlic-Fried-Rice3.jpg"
-              />
-            </div>
-            <div class="item">
-              <div class="item-header">
-                <div id="quanity-name">
-                  <span class="item-quantity">1x</span>
-                  <span class="item-name">Japanese-Fried-Rice</span>
-                </div>
-                <span class="item-price"> $6.70</span>
-              </div>
-              <div class="item-description">Description</div>
-            </div>
-          </div>
-          <div class="menu-item">
-            <div class="item-image">
-              <img
-                src="https://cardamommagazine.com/wp-content/uploads/2021/04/chicken-gyoza-500x500.jpg"
-                alt="Chicken Gyoza"
-              />
-            </div>
-
-            <div class="item">
-              <div class="item-header">
-                <div id="quanity-name">
-                  <span class="item-quantity">1x</span>
-                  <span class="item-name">Chicken-Gyoza</span>
-                </div>
-                <span class="item-price">$6.70</span>
-              </div>
-
-              <div class="item-description">Description</div>
-            </div>
-          </div>
-          <div class="menu-item">
-            <div class="item-image">
-              <img
-                src="https://www.wandercooks.com/wp-content/uploads/2023/09/yakisoba-recipe-4.jpg"
-                alt="Yakisoba"
-              />
-            </div>
-
-            <div class="item">
-              <div class="item-header">
-                <div class="quantity-name">
-                  <span class="item-quantity">1x</span>
-                  <span class="item-name">Yakisoba</span>
-                </div>
-                <span class="item-price">$7.90</span>
-              </div>
-
-              <div class="item-description">Description</div>
-            </div>
-          </div>
+          <!--checkout.js -->
         </div>
         <div class="partborder">
           <h2>Special Instructions</h2>
@@ -113,5 +57,8 @@
         <div id="placeOrder">Place Order</div>
       </div>
     </section>
+    <script>
+      await import('/order/dev-seed.js').then(m => m.seedDevData());
+    </script>
   </body>
 </html>

@@ -86,7 +86,7 @@ async function loadCheckout() {
     document.getElementById("placeOrder").addEventListener("click", async () => {
         // Get special instructions from input
         const instructions = document.getElementById("instructions").value;
-
+        
         // Generate unique order number
         const orderNumber = Date.now().toString().slice(-6);
 
@@ -107,13 +107,27 @@ async function loadCheckout() {
         placeOrderButton.style.pointerEvents = "none";
 
         // Save order to database
-        await order.write();
+        const savedOrder = await order.write();
+
+        // Debug: log returned value and order instance
+        console.log("savedOrder:", savedOrder, "order:", order);
+
+        // Determine order id from return value or instance
+        const orderId = savedOrder?.id || order.id || savedOrder?.ref?.id || (savedOrder?.path && savedOrder.path.split('/').pop());
+
+        if (!orderId) {
+            console.error("No order id returned. Aborting redirect.");
+            // re-enable button so user can retry
+            placeOrderButton.textContent = "Place Order";
+            placeOrderButton.style.pointerEvents = "auto";
+            return;
+        }
 
         // Remove ordered items from cart
-        localStorage.clear("tray")
+        localStorage.removeItem("tray");
 
-        // Redirect to order details page
-        window.location.href = `/order/index.html?id=${order.id}`;
+        // Redirect to order details page using resolved id
+        window.location.href = `/order/index.html?id=${orderId}`;
     });
 }
 
