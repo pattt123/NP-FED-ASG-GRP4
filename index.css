@@ -29,6 +29,7 @@ hr {
     border-style: solid;
     border-color: var(--color-zinc-500);
     border-width: 1px;
+    box-shadow: 0 2px 4px var(--color-zinc-300);
 }
 
 .search-container input {
