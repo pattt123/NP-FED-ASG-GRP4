@@ -33,7 +33,11 @@ async function func() {
     customerElement.textContent = customer.name
 
     const instructionsElement = document.getElementById("instructions")
-    instructionsElement.textContent = order.instructions 
+    if (order.instructions != "") {
+        instructionsElement.textContent = order.instructions 
+    } else {
+        instructionsElement.textContent = "None"
+    }
 
     const statusElement = document.getElementById("status")
     statusElement.textContent = order.status.toUpperCase()

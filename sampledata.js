@@ -6,14 +6,14 @@ import { User } from "./lib/user.js"
 
 /* Partially generated using Claude Sonnet 4.5*/
 
-const stall0 = new Stall("894e7361-4ce1-453d-96c3-6f16573ea440", "Bob's Chicken Rice", "Best Chicken Rice in Singapore!", "https://unsplash.com/photos/a-plate-of-chicken-and-rice-with-sauce-i4Bq0H99i9k", [])
+const stall0 = new Stall("894e7361-4ce1-453d-96c3-6f16573ea440", "Bob's Chicken Rice", "Best Chicken Rice in Singapore!", "https://img.potassium.sh/images/bcaaa18e-406c-411a-a340-cf453d3ec7e9.jpg", [])
 const menuitems0 = [
-    new MenuItem("7bb7ec0c-51ab-4c76-aa7a-cd8cf4965a8a", stall0.id, "Steamed Chicken Rice", "Steamed chicken with fragrent rice", "https://unsplash.com/photos/a-close-up-of-a-plate-of-chicken-and-rice-d8k_3nI9g6o", 5),
-    new MenuItem("4901828a-0428-4406-895a-ee02669d1d15", stall0.id, "Roast Chicken Rice", "Roasted chicken with fragrent rice", "https://unsplash.com/photos/a-plate-of-roasted-chicken-with-rice-and-vegetables-9_Yw9N7-f5A", 5),
+    new MenuItem("7bb7ec0c-51ab-4c76-aa7a-cd8cf4965a8a", stall0.id, "Steamed Chicken Rice", "Steamed chicken with fragrent rice", "https://img.potassium.sh/images/e4d9773f-8376-4940-ab48-94c6dc022c37.jpg", 5),
+    new MenuItem("4901828a-0428-4406-895a-ee02669d1d15", stall0.id, "Roast Chicken Rice", "Roasted chicken with fragrent rice", "https://img.potassium.sh/images/316ce228-241f-4810-b1a9-d2139d47e15d.jpg", 5),
     new MenuItem("0cf4541a-fd07-42ce-b8be-4bd4d6887e87", stall0.id,
-        "Steamed Chicken Drumstick Rice", "Steamed chicken drumstick with fragrent rice", "https://unsplash.com/photos/a-plate-of-chicken-drumsticks-and-rice-with-a-sauce-Yj2Pq9gV5u0", 6),
+        "Steamed Chicken Drumstick Rice", "Steamed chicken drumstick with fragrent rice", "https://img.potassium.sh/images/e4d9773f-8376-4940-ab48-94c6dc022c37.jpg", 6),
     new MenuItem("0513c541-9ea6-482f-ba2a-18366c0100a4", stall0.id,
-        "Roast Chicken Drumstick Rice", "Roasted chicken drumstick with fragrent rice", "https://unsplash.com/photos/a-plate-of-roasted-chicken-drumsticks-with-rice-and-vegetables-xJ8n2h4z6w0", 6),
+        "Roast Chicken Drumstick Rice", "Roasted chicken drumstick with fragrent rice", "https://img.potassium.sh/images/316ce228-241f-4810-b1a9-d2139d47e15d.jpg", 6),
 ]
 stall0.menuitems = menuitems0
 stall0.write()

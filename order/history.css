@@ -117,3 +117,11 @@ hr {
     padding-right: 8px;
     border-radius: 4px;
 }
+
+/* Empty state */
+.empty-orders {
+    padding: 2rem;
+    text-align: center;
+    color: var(--color-zinc-600);
+    background: transparent;
+}

@@ -7,21 +7,30 @@
     <link href="/css/colors.css" rel="stylesheet">
     <link href="/css/text.css" rel="stylesheet">
     <link href="./index.css" rel="stylesheet">
-    <script src="/lib/back.js" type="module"></script>
     <script src="./index.js" type="module"></script>
     <title>myHawkerSG | Edit Stall</title>
 </head>
 <body>
     <nav>
-        <a id="back" href="/vendor/"><img src="https://unpkg.com/lucide-static@latest/icons/chevron-left.svg" width="32px" height="32px"/></a>
+        <a id="back" href="javascript:history.back()"><img src="https://unpkg.com/lucide-static@latest/icons/chevron-left.svg" width="32px" height="32px"/></a>
     </nav>
     <header>
-        <div id="info">
-            <img id="stallimg" src="https://placehold.co/64?text=?" alt="" width="64px" height="64px">
-            <span id="text">
-                <h1>LOADING STALL</h1>
-                <span id="description">LOADING</span>
-            </span>
+        <div id="left">
+             <div id="info">
+                <img id="stallimg" src="https://placehold.co/64?text=?" alt="" width="64px" height="64px">
+                <span id="text">
+                    <div class="swap">
+                        <h1>LOADING STALL</h1>
+                        <input class="input hidden" type="text" id="name" name="name" value="LOADING">
+                    </div>
+                    <div class="swap">
+                        <span id="description">LOADING</span>
+                        <input class="input hidden" type="text" id="desc" name="desc" value="LOADING">
+                    </div>
+                </span>
+            </div>
+            <button id="edit" class="swapbutton" type="button">Edit Details</button>
+            <button id="save" class="swapbutton hidden" type="button">Save Details</button>
         </div>
         <a href="./item.html">Add Item</a>
     </header>

@@ -1,0 +1,246 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 1.25rem;
+}
+
+.tray {
+    background: white;
+    color: green;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.125rem;
+    font-weight: 600;
+    border-radius: 0.75rem;
+    cursor: pointer;
+    box-shadow: 0 0.25rem 1.25rem var(--color-zinc-500);
+}
+
+.demo-button:hover {
+    transform: translateY(-0.125rem);
+    box-shadow: 0 0.375rem 1.5625rem var(--color-zinc-500);
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--color-zinc-500);
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+    z-index: 999;
+}
+
+.overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.cart-tray {
+    position: fixed;
+    top: 0;
+    right: -28.125rem;
+    width: 28.125rem;
+    height: 100vh;
+    background: white;
+    box-shadow: -0.25rem 0 1.25rem var(--color-zinc-500);
+    transition: right 0.3s ease-in-out;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+}
+
+.cart-tray.active {
+    right: 0;
+}
+
+.cart-header {
+    padding: 1.5rem;
+    border-bottom: 0.0625rem solid #e5e7eb;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cart-header h2 {
+    font-size: 1.5rem;
+    color: var(--color-zinc-500);
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 1.75rem;
+    color: #6b7280;
+    cursor: pointer;
+    width: 2.25rem;
+    height: 2.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.5rem;
+    transition: 0.2s;
+}
+
+.close-btn:hover {
+    background: #f3f4f6;
+}
+
+.cart-items {
+    flex: 1;
+    overflow-y: auto;
+    padding: 1.5rem;
+}
+
+.cart-item {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+    background: #f9fafb;
+    border-radius: 0.75rem;
+    margin-bottom: 1rem;
+    transition: outline 0.15s ease;
+}
+
+.cart-item:hover {
+    outline: 0.09375rem solid #3b5837;
+}
+
+.item-image {
+    width: 5rem;
+    height: 5rem;
+    background: #e5e7eb;
+    border-radius: 0.5rem;
+    object-fit: cover;
+}
+
+.item-details {
+    flex: 1;
+}
+
+.item-name {
+    font-weight: 600;
+    color: black;
+    margin-bottom: 0.25rem;
+}
+
+.item-description {
+    font-size: 0.875rem;
+    color: #3b5837;
+    margin-bottom: 0.5rem;
+}
+
+.item-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.quantity-btn {
+    width: 1.75rem;
+    height: 1.75rem;
+    border: 0.0625rem solid #d1d5db;
+    background: white;
+    border-radius: 0.375rem;
+    cursor: pointer;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s;
+}
+
+.quantity-btn:hover {
+    background: #f3f4f6;
+}
+
+.quantity {
+    font-weight: 600;
+    color: black;
+    min-width: 1.5rem;
+    text-align: center;
+}
+
+.item-price {
+    font-weight: 700;
+    color: #3b5837;
+    font-size: 1rem;
+}
+
+.remove-btn {
+    color: red;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.25rem;
+    padding: 0.25rem;
+}
+
+.cart-summary {
+    padding: 1.5rem;
+    border-top: 0.0625rem solid #e5e7eb;
+    background: #f9fafb;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.75rem;
+    color: var(--color-zinc-500);
+}
+
+.summary-row.total {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: black;
+    margin-top: 0.75rem;
+    padding-top: 0.75rem;
+    border-top: 0.125rem solid #e5e7eb;
+}
+
+.checkout-btn {
+    width: 100%;
+    padding: 1rem;
+    background-color: #75B06F;
+    color: white;
+    border: none;
+    border-radius: 0.75rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: transform 0.2s;
+}
+
+.checkout-btn:hover {
+    transform: translateY(-0.125rem);
+    box-shadow: 0 0.25rem 0.9375rem var(--color-zinc-500);
+}
+
+.empty-cart {
+    text-align: center;
+    padding: 3.75rem 1.25rem;
+    color: var(--color-zinc-500);
+}
+
+.empty-cart-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+@media (max-width: 31.25rem) {
+    .cart-tray {
+        width: 100%;
+        right: -100%;
+    }
+}

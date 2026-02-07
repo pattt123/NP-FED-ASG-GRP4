@@ -13,36 +13,31 @@
 </head>
 <body>
     <nav id="back">
-        <a href="javascript:history.back()">Back</a>
+        <a id="back" href="javascript:history.back()"><img src="https://unpkg.com/lucide-static@latest/icons/chevron-left.svg" width="32px" height="32px"/></a>
     </nav>
     <header>
         <h1>Account</h1>
-        <button id="order_history" type="button">Order History</button>
+        <a href="/order/history.html">Order History</a>
     </header>
-    <section id="header">
+    <section class="border">
         <div>
-            <h2>Username :</h2> <input type="username" placeholder="username" id="username">
-            <h2>Password :</h2> <input type="password" placeholder="password" id="password">
-
-            <section>
-                <h2>Change Password:</h2>
-                <label for="current_password">Current Password:</label>
-                <input type="password" placeholder="current password" id="current_password">
-                <div></div>
-                <label for="new_password">New Password:</label>
-                <input type="password" placeholder="new password" id="new_password">
-                <div id="name">
-                    <label for="new_name">New Name:</label>
-                    <input type="new name" placeholder="new name" id="new_name">
-                </div> 
-                <button id="saveBtn">Save Changes</button>
-            </section>
-            
-
+            <h2 id="namedisplay">Name: LOADING</h2> <input type="text" placeholder="Change name" id="name">
+            <h2 id="usernamedisplay">Username: LOADING</h2> <input type="text" placeholder="Change username" id="username">
         </div>
+        
+        <div>
+            <h2>Change Password:</h2>
+            <label for="current_password">Current Password:</label>
+            <input type="password" placeholder="************" id="current_password">
+            <div></div>
+            <label for="new_password">New Password:</label>
+            <input type="password" placeholder="*************" id="new_password">
+        </div>
+        <span id="message"></span>
+        <button id="saveBtn">Save Changes</button>
     </section>
 
 </body>
 
 <!--References
-//Source: OpenAI. (2026). ChatGPT (GPT-5.2) [Large language model]. https://chat.openai.com/ -->
+//Source: OpenAI. (2026). ChatGPT (GPT-4.1) [Large language model]. https://chat.openai.com/ -->

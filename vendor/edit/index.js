@@ -33,6 +33,50 @@ async function func() {
     })
     const itemsElement = document.getElementById("items")
     itemsElement.innerHTML = items
+
+    const nameInput = document.getElementById("name")
+    nameInput.value = stall.name
+    const descInput = document.getElementById("desc")
+    descInput.value = stall.description
+
+    const editElement = document.getElementById("edit")
+    const saveElement = document.getElementById("save")
+
+    editElement.addEventListener("click", async () => {
+        h1Element.classList.add("hidden")
+        descriptionElement.classList.add("hidden")
+        nameInput.classList.remove("hidden")
+        descInput.classList.remove("hidden")
+        editElement.classList.add("hidden")
+        saveElement.classList.remove("hidden")
+    })
+
+    saveElement.addEventListener("click", async () => {
+        const nameValue = nameInput.value;
+        const descValue = descInput.value;
+        if (nameValue != stall.name && descValue != stall.description) {
+            stall.name = nameValue;
+            stall.description = descValue;
+            await stall.write()
+            window.location.reload()
+        } else if (nameValue != stall.name ) {
+            stall.name = nameValue;
+            await stall.write()
+            window.location.reload()
+        } else if (descValue != stall.description) {
+            stall.description = descValue;
+            await stall.write()
+            window.location.reload()
+        }
+
+        h1Element.classList.remove("hidden")
+        descriptionElement.classList.remove("hidden")
+        nameInput.classList.add("hidden")
+        descInput.classList.add("hidden")
+        editElement.classList.remove("hidden")
+        saveElement.classList.add("hidden")
+    })
+
 }
 
 const itemComponent = `
@@ -52,3 +96,4 @@ const itemComponent = `
 `
 
 await func()
+
