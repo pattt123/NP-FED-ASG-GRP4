@@ -68,12 +68,15 @@ async function loadOrder() {
         itemsContainer.innerHTML = itemsHtml;
     }
 
-    // Display special instructions
-    const instructionsElement = document.querySelector("#left .part.border p");
-    if (instructionsElement) instructionsElement.textContent = order.specialInstructions || "No special instructions.";
+    // Display special instructions (check both property names)
+    const instructionsElement = document.querySelector("#special-instructions");
+    if (instructionsElement) {
+        const instructions = order.specialInstructions || order.instructions || "No special instructions.";
+        instructionsElement.textContent = instructions;
+    }
 
     // Calculate and display pricing
-    const subtotal = order.calculauteSubtotal();
+    const subtotal = order.calculateSubtotal();
     const platform = 1.49; // Fixed platform fee
     const total = subtotal + platform;
 
