@@ -2,8 +2,8 @@
     grid-column: span 3;
 }
 button {
-    background-color: var(--color-green-500);
-    color: var(--color-green-100);
+    background-color: var(--color-orange-500);
+    color: var(--color-orange-100);
 }
 
 h1 {
