@@ -51,8 +51,8 @@ button {
     border-radius: 9999px;
     font-size: var(--font-1g);
     line-height: var(--line-1g);
-    background-color: var(--color-green-500);
-    color: var(--color-green-100);
+    background-color: var(--color-orange-500);
+    color: var(--color-orange-100);
 }
 login {
     text-decoration: underline;

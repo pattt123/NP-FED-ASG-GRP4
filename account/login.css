@@ -49,8 +49,8 @@ button {
     border-radius: 9999px;
     font-size: var(--font-lg);
     line-height: var(--line-lg);
-    background-color: var(--color-green-500);
-    color: var(--color-green-100);
+    background-color: var(--color-orange-500);
+    color: var(--color-orange-100);
 }
 
 
