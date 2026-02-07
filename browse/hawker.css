@@ -20,22 +20,7 @@ hr {
     border-width: 1px;
     box-shadow: 0 2px 4px var(--color-zinc-300);
 }
-#tray{
-    padding: 8px;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    margin:0.2rem;
-    height: fit-content;
-    font-size: var(--font-md);
-    line-height: var(--line-lg);
-    background-color: #3b5837;
-    color: White;
-    border-radius: 9999px;
-}
 
-#tray:hover{
-  color:#75B06F
-}
 .stall:hover{
   border-color:#3b5837;
   transition: 0.3s;
