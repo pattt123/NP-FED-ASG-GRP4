@@ -46,7 +46,7 @@ buttonElement.addEventListener('click', async () => {
 });
 let signupLink = document.getElementById("signup");
 signupLink.addEventListener('click', async () => {
-    window.location.href = "/account/login.html"
+    window.location.href = "/account/signup.html"
 });
 
 //References
