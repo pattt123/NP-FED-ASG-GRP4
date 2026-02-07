@@ -51,7 +51,7 @@ h1{
     gap: 2rem;
 }
 .stall{
-    color:var(--color-orange-500)
+    color:var(--color-orange-500);
     font-size: var(--font-md);
     line-height: var(--line-md);
     padding: 1.5rem;

@@ -1,29 +1,61 @@
-let cartData = [
+// Sample food cart data
+const sampleCart = [
     {
         id: 1,
-        name: "Hokkien Mee",
-        description: "Stir-fried noodles with seafood.",
-        price: 6.00,
+        name: "Margherita Pizza",
+        description: "Classic pizza with tomato, mozzarella, and basil",
+        price: 12.99,
         quantity: 1,
-        image: "https://admin.misstamchiak.com/wp-content/uploads/2016/12/16069838051_c75eb4dd99_o-e1481721167937.jpg"
+        image: "https://via.placeholder.com/80?text=Pizza"
     },
     {
         id: 2,
-        name: "Fried Kway Teow",
-        description: "Stir-fried noodles with black sauce.",
-        price: 5.50,
-        quantity: 1,
-        image: "https://www.feastingathome.com/wp-content/uploads/2025/01/Char-Kway-Teow-12.jpg"
+        name: "Cheeseburger",
+        description: "Juicy beef patty with cheddar cheese and lettuce",
+        price: 9.49,
+        quantity: 2,
+        image: "https://via.placeholder.com/80?text=Burger"
     },
     {
         id: 3,
-        name: "Oyster Omelette",
-        description: "Wok-fried golden eggs with oysters.",
-        price: 5.00,
+        name: "Caesar Salad",
+        description: "Crisp romaine, parmesan, and Caesar dressing",
+        price: 7.99,
         quantity: 1,
-        image: "https://hungrygowhere.com/wp-content/uploads/2023/08/05-ev-best-oyster-omelette-singapore-hougang-fried-oyster-and-kway-teow-hungrygowhere.jpg"
+        image: "https://via.placeholder.com/80?text=Salad"
+    },
+    {
+        id: 4,
+        name: "French Fries",
+        description: "Golden crispy fries with sea salt",
+        price: 3.99,
+        quantity: 3,
+        image: "https://via.placeholder.com/80?text=Fries"
     }
 ];
+
+function loadCart() {
+  const savedCart = localStorage.getItem("cart");
+  return savedCart ? JSON.parse(savedCart) : [];
+}
+
+
+let cartData = [];
+
+// Load cart from localStorage or use sample data
+function loadCart() {
+    const savedCart = localStorage.getItem("cart");
+    if (savedCart) {
+        cartData = JSON.parse(savedCart);
+    } else {
+        cartData = sampleCart;
+        saveCart();
+    }
+}
+
+function saveCart() {
+    localStorage.setItem("cart", JSON.stringify(cartData));
+}
 
 function toggleCart() {
     const overlay = document.getElementById('overlay');
@@ -36,21 +68,21 @@ function updateQuantity(id, change) {
     const item = cartData.find(item => item.id === id);
     if (item) {
         item.quantity = Math.max(1, item.quantity + change);
+        saveCart();
         renderCart();
     }
 }
 
 function removeItem(id) {
     cartData = cartData.filter(item => item.id !== id);
+    saveCart();
     renderCart();
 }
 
 function calculateTotals() {
     const subtotal = cartData.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-
     const platform = 1.49;
     const total = subtotal + platform;
-
     return { subtotal, platform, total };
 }
 
@@ -60,35 +92,36 @@ function renderCart() {
 
     if (cartData.length === 0) {
         cartItemsContainer.innerHTML = `
-                    <div class="empty-cart">
-                        <div class="empty-cart-icon">🛒</div>
-                        <h3>Your cart is empty</h3>
-                        <p>Add some items to get started</p>
-                    </div>
-                `;
+            <div class="empty-cart">
+                <div class="empty-cart-icon">🛒</div>
+                <h3>Your cart is empty</h3>
+                <p>Add some items to get started</p>
+            </div>
+        `;
     } else {
         cartItemsContainer.innerHTML = cartData.map(item => `
-                    <div class="cart-item">
-                        <img src="${item.image}" alt="${item.name}" class="item-image">
-                        <div class="item-details">
-                            <div class="item-name">${item.name}</div>
-                            <div class="item-description">${item.description}</div>
-                            <div class="item-controls">
-                                <button class="quantity-btn" onclick="updateQuantity(${item.id}, -1)">−</button>
-                                <span class="quantity">${item.quantity}</span>
-                                <button class="quantity-btn" onclick="updateQuantity(${item.id}, 1)">+</button>
-                                <span class="item-price">$${(item.price * item.quantity).toFixed(2)}</span>
-                                <button class="remove-btn" onclick="removeItem(${item.id})">×</button>
-                            </div>
-                        </div>
+            <div class="cart-item">
+                <img src="${item.image}" alt="${item.name}" class="item-image">
+                <div class="item-details">
+                    <div class="item-name">${item.name}</div>
+                    <div class="item-description">${item.description}</div>
+                    <div class="item-controls">
+                        <button class="quantity-btn" onclick="updateQuantity(${item.id}, -1)">−</button>
+                        <span class="quantity">${item.quantity}</span>
+                        <button class="quantity-btn" onclick="updateQuantity(${item.id}, 1)">+</button>
+                        <span class="item-price">$${(item.price * item.quantity).toFixed(2)}</span>
+                        <button class="remove-btn" onclick="removeItem(${item.id})">×</button>
                     </div>
-                `).join('');
+                </div>
+            </div>
+        `).join('');
     }
 
     document.getElementById('subtotal').textContent = `$${subtotal.toFixed(2)}`;
-    document.getElementById('platform').textContent = `$${platform}`;
+    document.getElementById('platform').textContent = `$${platform.toFixed(2)}`;
     document.getElementById('total').textContent = `$${total.toFixed(2)}`;
 }
+
 function checkout() {
     if (cartData.length === 0) {
         alert('Your cart is empty!');
@@ -98,5 +131,6 @@ function checkout() {
     alert(`Proceeding to checkout with total: $${total.toFixed(2)}`);
 }
 
-// Initialize cart
+// Initialize cart when page loads
+loadCart();
 renderCart();

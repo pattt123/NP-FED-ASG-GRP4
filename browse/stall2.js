@@ -32,7 +32,6 @@ async function loadStallPage() {
         <div class="dish">
             <div class="dishtext">
                 <h2>${menuitem.name}</h2>
-                <span id="like"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiMwMDAwMDAiIHN0cm9rZS13aWR0aD0iMS4yNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBjbGFzcz0ibHVjaWRlIGx1Y2lkZS10aHVtYnMtdXAtaWNvbiBsdWNpZGUtdGh1bWJzLXVwIj48cGF0aCBkPSJNMTUgNS44OCAxNCAxMGg1LjgzYTIgMiAwIDAgMSAxLjkyIDIuNTZsLTIuMzMgOEEyIDIgMCAwIDEgMTcuNSAyMkg0YTIgMiAwIDAgMS0yLTJ2LThhMiAyIDAgMCAxIDItMmgyLjc2YTIgMiAwIDAgMCAxLjc5LTEuMTFMMTIgMmEzLjEzIDMuMTMgMCAwIDEgMyAzLjg4WiIvPjxwYXRoIGQ9Ik03IDEwdjEyIi8+PC9zdmc+" alt="image"></span>
             </div>
             <div id="details">
                 <section class="images">
@@ -43,7 +42,7 @@ async function loadStallPage() {
                         <span id="description">${menuitem.description}</span>
                         <section id="dishbottom">
                             <span id="price">$${menuitem.price}</span>
-                            <button id="addtocart-${menuitem.id}"><img src="https://cdn-icons-png.flaticon.com/128/3917/3917172.png" alt="add to cart"></button>
+                            <button id="addtocart">+</button>
                         </section>
                     </span>
                 </div>    

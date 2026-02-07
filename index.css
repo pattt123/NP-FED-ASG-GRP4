@@ -102,7 +102,9 @@ img {
     object-fit: cover;
 
 }
-
+.hawker:hover{
+    border-color: 2px var(--color-zinc-500)
+}
 #hawkerimages {
     display: grid;
     flex-wrap: no-wrap;

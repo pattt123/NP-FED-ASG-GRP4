@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,31 +11,55 @@
     <script type="module" src="./stall2.js"></script>
     <title>myHawkerSG | Vendor Home</title>
 </head>
+
 <body>
-    <section id=header>
+    <section id="header">
         <nav id="head">
-        <a id="back" href="hawker.html"><img src="https://unpkg.com/lucide-static@latest/icons/chevron-left.svg" width="32px" height="32px"/></a>
+            <a id="back" href="hawker.html"><img src="https://unpkg.com/lucide-static@latest/icons/chevron-left.svg"
+                    width="32px" height="32px" /></a>
             <div id="tray">
                 <section>Tray</section>
-                <section></section>
             </div>
         </nav>
         <section id="stalldetails">
             <span id="stallimage">
-                <img src="https://www.elementshk.com/v3/assets/blt2e2a6920a8eb4819/blt83983719fc6e35c2/5fa7c4ef72a3526f28db9ed9/TianTian_Logo_600x600.jpg" alt="">
+                <img src="" alt="">
             </span>
             <div>
-                <h3 id="name">Tian Tian Chicken Rice</h3>
-                <span id="stalldesc">Serving up tender chicken and fragrant rice. Singapore’s favorite comfort food,<br> straight from the wok to your plate.</span>
+                <h3 id="name"></h3>
+                <span></span>
             </div>
         </section>
         <hr>
     </section>
-    <section id="dishes">        
-    </section>
-     <footer class="footer">
-        <div class="footer-container">
 
+    <section id="dishes">
+        <!-- Dish Template -->
+        <div class="dish">
+            <div class="dishtext">
+                <!-- Dish title/name goes here -->
+            </div>
+            <div id="details">
+                <section class="images">
+                    <img src="" alt="">
+                </section>
+                <div class="dishsubtext">
+                    <span id="subtext">
+                        <span id="description"></span>
+                    </span>
+                </div>
+            </div>
+            <!-- This is now positioned at bottom right -->
+            <div id="dishbottom">
+                <span id="price"></span>
+                <button id="addtocart">+</button>
+            </div>
+        </div>
+        <!-- More dish items would go here -->
+    </section>
+
+    <footer class="footer">
+        <div class="footer-container">
             <!-- About -->
             <div class="footer-section">
                 <h3>myHawkerSG</h3>
@@ -48,17 +73,17 @@
             <div class="footer-section">
                 <h4>Quick Links</h4>
                 <ul>
-                    <li><a href="#">Hawkers</a></li>
-                    <li><a href="#">My Tray</a></li>
+                    <li><a href="../index.html">Hawkers</a></li>
+                    <li><a href="../order/history.html">Order History</a></li>
                 </ul>
             </div>
 
             <!-- Contact -->
             <div class="footer-section">
                 <h4>Contact Us</h4>
-                <p>📍 123 Hawker Street, Singapore</p>
-                <p>📞 +65 6123 4567</p>
-                <p>✉️ support@myhawkerhub.sg</p>
+                <p>123 Hawker Street, Singapore</p>
+                <p>+65 6123 4567</p>
+                <p>support@myhawkerhub.sg</p>
             </div>
 
             <!-- Opening Hours -->
@@ -67,7 +92,6 @@
                 <p>Mon - Fri: 8am - 9pm</p>
                 <p>Sat - Sun: 7am - 10pm</p>
             </div>
-
         </div>
 
         <!-- Bottom Bar -->
@@ -75,7 +99,6 @@
             <p>© 2026 HawkerHub. All rights reserved.</p>
         </div>
     </footer>
-    
 </body>
 
-</html> 
+</html>
