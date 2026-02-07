@@ -1,12 +1,5 @@
-.search-container {
-    display: flex;
-    align-items: center;
-    background: #fff;
-    border-radius: 25px;
-    border-color: 2px var(--color-zinc-200);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    padding: 5px 10px;
-    margin-bottom: 2rem;
+#login {
+    padding: 1ram;
 }
 a{
     text-decoration:none;
@@ -45,26 +38,19 @@ nav {
     display: flex;
     justify-content: space-between;
 }
-
-
-button{
-    cursor:pointer;
-}
-
-h1 {
-    display: flex;
+h1{
+    display:flex;
     justify-content: center;
     font-size: var(--font-7xl);
     color:var(--color-orange-500);
     padding-bottom: 2rem;
 }
-
-h2 {
-    font-weight: 600;
+h2{
+        font-weight: 600;
 }
-
-#head {
-    padding: 1.5rem 2rem 0rem 2rem;
+#head{
+    padding: 2rem;
+    background-image: url("https://images.lifestyleasia.com/wp-content/uploads/sites/6/2020/02/03154109/hawker-food-hero-image-image-credit-visit-singapore-1600x900.jpg");
 }
 
 #orderhistory{
@@ -79,23 +65,21 @@ h2 {
     color: White;
     border-radius: 5rem;;
 }
-
 #login {
     padding: 8px;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    margin:0.2rem;
+    padding-left: 16px;
+    padding-right: 16px;
     height: fit-content;
-    font-size: var(--font-md);
+    font-size: var(--font-lg);
     line-height: var(--line-lg);
     background-color: var(--color-orange-400);
     color: White;
     border-radius: 5rem;;
 }
-
-body {
+body{
     padding: 0;
 }
+
 img {
 
     width: 100%;
@@ -128,33 +112,32 @@ img {
 
 #hawkers {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    padding: 1rem;
-    gap: 1.5rem;
 }
-
-.hawker {
-
+img{
+    border-radius:1rem;
+    width:100%;
+    margin-bottom: 0.5rem;
+}
+#hawkers{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 4rem;
+    gap: 2rem;
+}
+.hawker{
+    
     font-size: var(--font-md);
     line-height: var(--line-md);
-    border-radius: 2rem;
+    padding: 1.5rem;
+
+    border-radius: 1rem;
     border-style: solid;
     border-color: var(--color-zinc-200);
     border-width: 1px;
-    box-shadow: 5px 5px 10px var(--color-zinc-300);
 }
-
-.hawkertext {
-    padding-top: 0.2rem;
-    padding-left: 1.5rem;
-    padding-bottom: 1rem;
-    padding-right: 1.5rem;
-    padding: 0.2rem 1.5rem 1rem 1.5rem;
-}
-
-.hawkersubtext {
-    display: flex;
-    flex-direction: column;
+.hawkersubtext{
+    display:flex;
+    flex-direction:column;
     color: var(--color-zinc-500)
 }
 
@@ -213,3 +196,4 @@ img {
     font-size: 13px;
     color: white;
 }
+
