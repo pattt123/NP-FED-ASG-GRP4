@@ -44,6 +44,10 @@ buttonElement.addEventListener('click', async () => {
         textMessage.textContent = "Login error occurred.";
     }
 });
+let signupLink = document.getElementById("signup");
+signupLink.addEventListener('click', async () => {
+    window.location.href = "/account/login.html"
+});
 
 //References
 //Source: OpenAI. (2026). ChatGPT (GPT-4.1) [Large language model]. https://chat.openai.com/

@@ -62,3 +62,8 @@ button {
     flex-direction: column;
     gap: 1rem;
 }
+signup {
+    text-decoration: underline;
+    display: flex;
+    justify-content: right;
+}
