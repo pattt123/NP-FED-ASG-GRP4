@@ -40,20 +40,19 @@
             <div class="dishtext">
                 <!-- Dish title/name goes here -->
             </div>
-            <div id="details">
+            <div class="details">
                 <section class="images">
                     <img src="" alt="">
                 </section>
                 <div class="dishsubtext">
-                    <span id="subtext">
-                        <span id="description"></span>
+                    <span class="subtext">
+                        <span class="description"></span>
                     </span>
                 </div>
             </div>
-            <!-- This is now positioned at bottom right -->
-            <div id="dishbottom">
-                <span id="price"></span>
-                <button id="addtocart">+</button>
+            <div class="dishbottom">
+                <span class="price"></span>
+                <button class="addtocart" aria-label="Add to cart">+</button>
             </div>
         </div>
         <!-- More dish items would go here -->
@@ -64,9 +63,8 @@
 
     <div class="cart-tray" id="cartTray" aria-hidden="true">
         <div class="cart-header">
-            <h2>Shopping Cart</h2>
-            <div style="display:flex;gap:8px;align-items:center;">
-                <button class="back-stall-btn" onclick="goToLastStall()">Back to Stall</button>
+            <h2>My Tray</h2>
+            <div style="display:flex; gap:8px; align-items:center;">
                 <button class="close-btn" onclick="toggleCart()">x</button>
             </div>
         </div>

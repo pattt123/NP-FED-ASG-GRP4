@@ -112,7 +112,7 @@
 }
 
 .cart-item:hover {
-    outline: 0.09375rem solid #3b5837;
+    outline: 0.09375rem var(--color-zinc-500);
 }
 
 .item-image {
@@ -135,7 +135,7 @@
 
 .item-description {
     font-size: 0.875rem;
-    color: #3b5837;
+    color: var(--color-orange-300);
     margin-bottom: 0.5rem;
 }
 
@@ -210,7 +210,7 @@
 .checkout-btn {
     width: 100%;
     padding: 1rem;
-    background-color: #75B06F;
+    background-color: var(--color-orange-400);
     color: white;
     border: none;
     border-radius: 0.75rem;

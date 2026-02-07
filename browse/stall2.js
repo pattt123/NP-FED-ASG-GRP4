@@ -28,23 +28,30 @@ async function loadStallPage() {
     // Build dishes HTML
     let dishesHTML = "";
     stall.menuitems.forEach(menuitem => {
+        // use data attributes on button so we can attach handler after
         dishesHTML += `
         <div class="dish">
             <div class="dishtext">
                 <h2>${menuitem.name}</h2>
             </div>
-            <div id="details">
+            <div class="details">
                 <section class="images">
                     <img src="${menuitem.image}" alt="photo of ${menuitem.name}">
                 </section> 
                 <div class="dishsubtext">
-                    <span id="subtext">
-                        <span id="description">${menuitem.description}</span>
-                        <section id="dishbottom">
-                            <span id="price">$${menuitem.price}</span>
-                            <button id="addtocart">+</button>
+                    <div class="subtext">
+                        <div class="description">${menuitem.description}</div>
+                        <section class="dishbottom">
+                            <span class="dish-price">$${menuitem.price}</span>
+                            <button class="addtocart" 
+                                data-id="${menuitem.id}"
+                                data-name="${escapeHtml(menuitem.name)}"
+                                data-desc="${escapeHtml(menuitem.description)}"
+                                data-price="${menuitem.price}"
+                                data-image="${menuitem.image}">+
+                            </button>
                         </section>
-                    </span>
+                    </div>
                 </div>    
             </div>       
         </div>
@@ -63,5 +70,36 @@ async function loadStallPage() {
     }
 }
 
-// Call the function when page loads
-document.addEventListener('DOMContentLoaded', loadStallPage);
+// simple escaping for inline data attributes
+function escapeHtml(str) {
+    if (!str) return '';
+    return String(str).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+}
+
+// attach handlers after DOM insertion
+function attachAddToCartHandlers() {
+    document.querySelectorAll('.addtocart').forEach(btn => {
+        btn.addEventListener('click', function (e) {
+            const id = this.dataset.id;
+            const name = this.dataset.name || '';
+            const description = this.dataset.desc || '';
+            const price = parseFloat(this.dataset.price) || 0;
+            const image = this.dataset.image || '';
+            // call addToCart from tray.js
+            try {
+                addToCart({ id, name, description, price, image, stall: localStorage.getItem('lastStall') });
+            } catch (err) {
+                console.error('addToCart not available', err);
+            }
+        });
+    });
+}
+
+// after we insert HTML, attach handlers
+const originalLoad = loadStallPage;
+async function loadStallPageWrapper() {
+    await originalLoad();
+    attachAddToCartHandlers();
+}
+// Call the wrapper when page loads
+document.addEventListener('DOMContentLoaded', loadStallPageWrapper);

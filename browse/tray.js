@@ -57,6 +57,43 @@ function saveCart() {
     localStorage.setItem("cart", JSON.stringify(cartData));
 }
 
+/**
+ * Add an item to the cart. `item` should be an object with at least
+ * `{id, name, price}`. Optional: `description`, `image`, `stall`.
+ */
+function addToCart(item) {
+    if (!item || !item.id) return;
+    // ensure cartData is loaded
+    if (!cartData) cartData = [];
+    const existing = cartData.find(i => String(i.id) === String(item.id));
+    if (existing) {
+        existing.quantity = (existing.quantity || 1) + 1;
+    } else {
+        const stallId = item.stall || localStorage.getItem('lastStall') || '';
+        cartData.push({
+            id: item.id,
+            name: item.name || '',
+            description: item.description || '',
+            price: Number(item.price) || 0,
+            quantity: 1,
+            image: item.image || '',
+            stall: stallId
+        });
+    }
+    saveCart();
+    renderCart();
+
+    // open the tray so user sees the update
+    try {
+        const overlay = document.getElementById('overlay');
+        const cartTray = document.getElementById('cartTray');
+        if (overlay && cartTray) {
+            overlay.classList.add('active');
+            cartTray.classList.add('active');
+        }
+    } catch (e) { /* ignore */ }
+}
+
 function toggleCart() {
     const overlay = document.getElementById('overlay');
     const cartTray = document.getElementById('cartTray');
@@ -65,7 +102,7 @@ function toggleCart() {
 }
 
 function updateQuantity(id, change) {
-    const item = cartData.find(item => item.id === id);
+    const item = cartData.find(item => String(item.id) === String(id));
     if (item) {
         item.quantity = Math.max(1, item.quantity + change);
         saveCart();
@@ -74,7 +111,7 @@ function updateQuantity(id, change) {
 }
 
 function removeItem(id) {
-    cartData = cartData.filter(item => item.id !== id);
+    cartData = cartData.filter(item => String(item.id) !== String(id));
     saveCart();
     renderCart();
 }
@@ -96,22 +133,21 @@ function renderCart() {
                 <div class="empty-cart-icon">🛒</div>
                 <h3>Your cart is empty</h3>
                 <p>Add some items to get started</p>
-                <button class="browse-btn" onclick="toggleCart(); window.location.href='/browse/hawker.html'">Browse Stalls</button>
+                <button class="browse-btn" onclick="toggleCart(); window.location.href='/index.html'">Browse Hawkers</button>
             </div>
         `;
-    } else {
-        cartItemsContainer.innerHTML = cartData.map(item => `
+    } else {cartItemsContainer.innerHTML = cartData.map(item => `
             <div class="cart-item">
                 <img src="${item.image}" alt="${item.name}" class="item-image">
                 <div class="item-details">
                     <div class="item-name">${item.name}</div>
                     <div class="item-description">${item.description}</div>
                     <div class="item-controls">
-                        <button class="quantity-btn" onclick="updateQuantity(${item.id}, -1)">−</button>
+                        <button class="quantity-btn" onclick="updateQuantity('${item.id}', -1)">−</button>
                         <span class="quantity">${item.quantity}</span>
-                        <button class="quantity-btn" onclick="updateQuantity(${item.id}, 1)">+</button>
+                        <button class="quantity-btn" onclick="updateQuantity('${item.id}', 1)">+</button>
                         <span class="item-price">$${(item.price * item.quantity).toFixed(2)}</span>
-                        <button class="remove-btn" onclick="removeItem(${item.id})">×</button>
+                        <button class="remove-btn" onclick="removeItem('${item.id}')">×</button>
                     </div>
                 </div>
             </div>

@@ -24,7 +24,7 @@ hr {
     padding-left:4rem;
     display:flex;
     gap:1rem;
-    color:#75B06F;
+    color:var(--color-zinc-400);
 
 }
 #stallimage img{
@@ -36,7 +36,7 @@ hr {
     align-items:center;
     padding:1rem 0 0.5rem 0;
     font-size:var(--font-2xl);
-    color:#3b5837;
+    color:var(--color-orange-500);
     border-radius:1rem;
 }
 
@@ -62,32 +62,33 @@ body{
     box-shadow:5px 5px 10px var(--color-zinc-300);
 }
 .dish:hover{
-  border-color:#3b5837;
+  border-color:var(--color-zinc-500 );
   transition: 0.3s;
 }
 .dishtext{
     display:flex;
     justify-content:space-between;
-    color:#3b5837
+    color:var(--color-orange-500);
 }
-#subtext{
+.subtext{
     display:flex;
     flex-direction:column;
+    justify-content:end;
     padding-top:0.5rem;
 }
-#price{
+.dish-price{
     font-size:var(--font-xl);
     display:flex;
     align-items:flex-end;
-    color:#75B06F
+    color:var(--color-orange-500)
 }
 .dishsubtext{
     display:flex;
     padding-left:1rem;
-    color: var(--color-zinc-500)
+    color: var(--color-zinc-500);
     
 }
-#details{
+.details{
     display:flex;
 }
 .images img{
@@ -95,35 +96,33 @@ body{
     width:7rem;
     height:7rem;
 }
-#dishbottom{
+.dishbottom{
     margin-top:auto;
     display:flex;
     justify-content:space-between;
 }
-#description{
+.description{
     width:25rem;
 }
 
 
 .footer {
     margin-top: 2rem;
-    background-color: #3b5837;
-    color: #ffffff;
+    background-color: var(--color-orange-400);
     padding: 40px 20px 20px;
-    font-family: Arial, sans-serif;
 }
 
 .footer-container {
     max-width: 1200px;
     margin: auto;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 30px;
 }
 .footer-section h3,
 .footer-section h4 {
     margin-bottom: 12px;
-    color: #75B06F;
+    color: black;
 }
 
 .footer-section p {
@@ -149,26 +148,26 @@ body{
 }
 
 .footer-section ul li a:hover {
-    color: #75B06F;
+    color: var(--color-zinc-500);
 }
 
 .footer-bottom {
     margin-top: 30px;
     text-align: center;
-    border-top: 1px solid white;
+    border-top: 1px solid black;
     padding-top: 15px;
     font-size: 13px;
     color: white;
 }
-#addtocart{
+.addtocart{
     font-size:var(--font-2xl);
-    background-color:var(--color-zinc-300);
+    background-color:var(--color-orange-400);
     padding-left:0.5rem;
     padding-bottom:0.2rem;
     padding-right:0.5rem;
-    border-radius:0.2rem;
+    border-radius:0.5rem;
 }
-#addtocart:hover{
+.addtocart:hover{
     background-color:var(--color-zinc-500);
 
 }
