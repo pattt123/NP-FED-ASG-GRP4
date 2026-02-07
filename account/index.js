@@ -1,6 +1,11 @@
 import { User } from "../lib/user.js";
 
 const saveBtn = document.getElementById("saveBtn");
+const orderHistory = document.getElementById("order_history");
+
+orderHistory.addEventListener("click", async () => {
+    window.location.href = "/order/history.html";
+});
 
 saveBtn.addEventListener("click", async () => {
     console.log("Save button clicked");
@@ -30,10 +35,10 @@ saveBtn.addEventListener("click", async () => {
     if (newNameInput !== "") user.name = newNameInput;
 
     // 💾 save to Firestore
-    await user.write();
+    //await user.write();
 
     alert("Account updated successfully!");
 });
 
 //References
-//Source: OpenAI. (2026). ChatGPT (GPT-4.1) [Large language model]. https://chat.openai.com/
+//Source: OpenAI. (2026). ChatGPT (GPT-5.2) [Large language model]. https://chat.openai.com/
