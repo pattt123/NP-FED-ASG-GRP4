@@ -54,8 +54,3 @@ button {
     background-color: var(--color-green-500);
     color: var(--color-green-100);
 }
-#login {
-    text-decoration: underline;
-    display: flex;
-    justify-content: right;
-}
