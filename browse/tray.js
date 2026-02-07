@@ -1,38 +1,4 @@
-// Sample food cart data
-const sampleCart = [
-    {
-        id: 1,
-        name: "Margherita Pizza",
-        description: "Classic pizza with tomato, mozzarella, and basil",
-        price: 12.99,
-        quantity: 1,
-        image: "https://via.placeholder.com/80?text=Pizza"
-    },
-    {
-        id: 2,
-        name: "Cheeseburger",
-        description: "Juicy beef patty with cheddar cheese and lettuce",
-        price: 9.49,
-        quantity: 2,
-        image: "https://via.placeholder.com/80?text=Burger"
-    },
-    {
-        id: 3,
-        name: "Caesar Salad",
-        description: "Crisp romaine, parmesan, and Caesar dressing",
-        price: 7.99,
-        quantity: 1,
-        image: "https://via.placeholder.com/80?text=Salad"
-    },
-    {
-        id: 4,
-        name: "French Fries",
-        description: "Golden crispy fries with sea salt",
-        price: 3.99,
-        quantity: 3,
-        image: "https://via.placeholder.com/80?text=Fries"
-    }
-];
+
 
 function loadCart() {
   const savedCart = localStorage.getItem("cart");

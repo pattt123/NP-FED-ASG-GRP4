@@ -73,12 +73,12 @@ async function loadOrder() {
     if (instructionsElement) instructionsElement.textContent = order.specialInstructions || "No special instructions.";
 
     // Calculate and display pricing
-    const subtotal = order.calculateSubtotal();
-    const fee = subtotal * 0.1; // 10% platform fee
-    const total = subtotal + fee;
+    const subtotal = order.calculauteSubtotal();
+    const platform = 1.49; // Fixed platform fee
+    const total = subtotal + platform;
 
     document.querySelector("#pricing .price:nth-child(1) .priceamt").textContent = `$${subtotal.toFixed(2)}`;
-    document.querySelector("#pricing .price:nth-child(2) .priceamt").textContent = `$${fee.toFixed(2)}`;
+    document.querySelector("#pricing .price:nth-child(2) .priceamt").textContent = `$${platform.toFixed(2)}`;
     document.querySelector("#totalpaid .priceamt").textContent = `$${total.toFixed(2)}`;
 
     // Show success popup only when redirected from checkout

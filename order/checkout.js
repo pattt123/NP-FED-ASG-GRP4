@@ -1,5 +1,4 @@
 import { User } from "/lib/user.js";
-import { Tray } from "/lib/tray.js";
 import { Order } from "/lib/order.js";
 import { Stall } from "/lib/stall.js";
 import { MenuItem } from "/lib/menuitem.js";
@@ -17,49 +16,82 @@ async function loadCheckout() {
         return;
     }
 
-    // Get tray from localStorage and find items for this stall
-    const tray = Tray.loadFromLocalStore()
-    const stallId = tray.stall;
-    if (!tray) {
-        window.location.href = `/browse/hawker.html?stall=${stallId}`;
+    // Get cart from localStorage (simple array format from browse/tray.js)
+    const cartData = (() => {
+        try {
+            const saved = localStorage.getItem('cart');
+            return saved ? JSON.parse(saved) : [];
+        } catch (e) {
+            console.error('Failed to parse cart', e);
+            return [];
+        }
+    })();
+
+    if (!cartData || cartData.length === 0) {
+        window.location.href = `/browse/hawker.html`;
+        return;
+    }
+
+    // Get stall from first item in cart (all items should be from same stall)
+    const stallId = cartData[0].stall;
+    if (!stallId) {
+        window.location.href = `/browse/hawker.html`;
         return;
     }
 
     // Get stall from stallId
     const stall = await Stall.getStallById(stallId)
     if (stall == undefined) {
-        localStorage.clear("tray")
-        window.location.href = "/"
+        localStorage.removeItem("cart");
+        window.location.href = "/";
         return;
     }
 
     // Display stall name
     document.querySelector(".stall-name").textContent = stall.name;
 
-    // Generate HTML for cart items
+    // Generate HTML for cart items and create OrderItem objects
     const itemsContainer = document.querySelector("#left .partborder");
     let itemsHtml = "";
-    for (const [key, value] of tray.items) {
-        const menuItem = await MenuItem.getMenuItemByStallIdAndId(stallId, key)
-        if (!menuItem) return "";
+    const orderItems = [];
+
+    for (const cartItem of cartData) {
+        // Get full menu item details if available
+        let menuItem = null;
+        try {
+            menuItem = await MenuItem.getMenuItemByStallIdAndId(stallId, cartItem.id);
+        } catch (e) {
+            console.warn('Could not fetch full menu item', e);
+        }
+
+        // Use fetched menuItem or fall back to cart item data
+        const itemData = menuItem || cartItem;
+        
         itemsHtml = itemsHtml + `
             <div class="menu-item">
                 <div class="item-image">
-                    <img src="${menuItem.image}" alt="${menuItem.name}" />
+                    <img src="${itemData.image}" alt="${itemData.name}" />
                 </div>
                 <div class="item">
                     <div class="item-header">
                         <div class="quantity-name">
-                            <span class="item-quantity">${value}x</span>
-                            <span class="item-name">${menuItem.name}</span>
+                            <span class="item-quantity">${cartItem.quantity}x</span>
+                            <span class="item-name">${itemData.name}</span>
                         </div>
-                        <span class="item-price">$${(menuItem.price * value).toFixed(2)}</span>
+                        <span class="item-price">$${(itemData.price * cartItem.quantity).toFixed(2)}</span>
                     </div>
-                    <div class="item-description">${menuItem.description}</div>
+                    <div class="item-description">${itemData.description}</div>
                 </div>
             </div>
         `;
 
+        // Create OrderItem for calculation (name, qty, price)
+        const orderItem = new OrderItem(
+            itemData.name,
+            cartItem.quantity,
+            itemData.price || cartItem.price
+        );
+        orderItems.push(orderItem);
     }
 
     // Clear existing items and add new ones
@@ -67,19 +99,16 @@ async function loadCheckout() {
     existingItems.forEach(item => item.remove());
     itemsContainer.insertAdjacentHTML("beforeend", itemsHtml);
 
-    // Create order items for calculation
-    const orderItems = await tray.asOrderItems()
-
     // Calculate subtotal using Order class method
     const subtotal = OrderItem.calculatePrice(orderItems)
 
-    // Calculate platform fee (10%) and total
-    const fee = subtotal * 0.1;
-    const total = subtotal + fee;
+    // Calculate platform fee (fixed $1.49) and total
+    const platform = 1.49;
+    const total = subtotal + platform;
 
     // Display pricing information
     document.querySelector("#pricing .priceamt").textContent = `$${subtotal.toFixed(2)}`;
-    document.querySelector("#pricing .price:nth-child(2) .priceamt").textContent = `$${fee.toFixed(2)}`;
+    document.querySelector("#pricing .price:nth-child(2) .priceamt").textContent = `$${platform.toFixed(2)}`;
     document.querySelector("#totalpaid .priceamt").textContent = `$${total.toFixed(2)}`;
 
     // Set up event listener for placing the order
@@ -124,7 +153,7 @@ async function loadCheckout() {
         }
 
         // Remove ordered items from cart
-        localStorage.removeItem("tray");
+        localStorage.removeItem("cart");
 
         // Redirect to order details page using resolved id
         window.location.href = `/order/index.html?id=${orderId}`;
