@@ -96,6 +96,7 @@ function renderCart() {
                 <div class="empty-cart-icon">🛒</div>
                 <h3>Your cart is empty</h3>
                 <p>Add some items to get started</p>
+                <button class="browse-btn" onclick="toggleCart(); window.location.href='/browse/hawker.html'">Browse Stalls</button>
             </div>
         `;
     } else {
@@ -128,7 +129,28 @@ function checkout() {
         return;
     }
     const { total } = calculateTotals();
-    alert(`Proceeding to checkout with total: $${total.toFixed(2)}`);
+    // Save current cart and navigate to checkout page
+    saveCart();
+    window.location.href = `/order/checkout.html`;
+}
+
+function goToLastStall() {
+    try {
+        const last = localStorage.getItem('lastStall');
+        if (last) {
+            // close the tray first
+            const overlay = document.getElementById('overlay');
+            const cartTray = document.getElementById('cartTray');
+            if (overlay) overlay.classList.remove('active');
+            if (cartTray) cartTray.classList.remove('active');
+            window.location.href = `/browse/stall.html?id=${encodeURIComponent(last)}`;
+            return;
+        }
+    } catch (e) {
+        console.warn('goToLastStall error', e);
+    }
+    // fallback
+    window.history.back();
 }
 
 // Initialize cart when page loads

@@ -54,6 +54,13 @@ async function loadStallPage() {
     // Insert into containers
     document.getElementById("dishes").innerHTML = dishesHTML;
     document.getElementById("stalldetails").innerHTML = detailsHTML;
+
+    // Save the current stall id so the tray can link back to this stall
+    try {
+        if (stall && stall.id) localStorage.setItem('lastStall', stall.id);
+    } catch (e) {
+        console.warn('Unable to save lastStall to localStorage', e);
+    }
 }
 
 // Call the function when page loads

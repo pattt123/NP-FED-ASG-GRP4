@@ -8,6 +8,7 @@
     <link href="/css/colors.css" rel="stylesheet">
     <link href="/css/text.css" rel="stylesheet">
     <link href="./stall.css" rel="stylesheet">
+    <link href="./tray.css" rel="stylesheet">
     <script type="module" src="./stall2.js"></script>
     <title>myHawkerSG | Vendor Home</title>
 </head>
@@ -17,7 +18,7 @@
         <nav id="head">
             <a id="back" href="hawker.html"><img src="https://unpkg.com/lucide-static@latest/icons/chevron-left.svg"
                     width="32px" height="32px" /></a>
-            <div id="tray">
+            <div id="tray" onclick="toggleCart()" style="cursor:pointer;">
                 <section>Tray</section>
             </div>
         </nav>
@@ -58,6 +59,39 @@
         <!-- More dish items would go here -->
     </section>
 
+    <!-- Tray overlay embedded into stall page -->
+    <div class="overlay" id="overlay" onclick="toggleCart()" aria-hidden="true"></div>
+
+    <div class="cart-tray" id="cartTray" aria-hidden="true">
+        <div class="cart-header">
+            <h2>Shopping Cart</h2>
+            <div style="display:flex;gap:8px;align-items:center;">
+                <button class="back-stall-btn" onclick="goToLastStall()">Back to Stall</button>
+                <button class="close-btn" onclick="toggleCart()">x</button>
+            </div>
+        </div>
+
+        <div class="cart-items" id="cartItems">
+            <!-- Cart items will be rendered here -->
+        </div>
+
+        <div class="cart-summary">
+            <div class="summary-row">
+                <span>Subtotal</span>
+                <span id="subtotal">$0.00</span>
+            </div>
+            <div class="summary-row ">
+                <span>Platform Fee</span>
+                <span id="platform">$0.00</span>
+            </div>
+            <div class="summary-row total">
+                <span>Total</span>
+                <span id="total">$0.00</span>
+            </div>
+            <button class="checkout-btn" onclick="checkout()">Proceed to Checkout</button>
+        </div>
+    </div>
+
     <footer class="footer">
         <div class="footer-container">
             <!-- About -->
@@ -82,7 +116,7 @@
             <div class="footer-section">
                 <h4>Contact Us</h4>
                 <p>123 Hawker Street, Singapore</p>
-                <p>+65 6123 4567</p>
+                <p>+65 61234567</p>
                 <p>support@myhawkerhub.sg</p>
             </div>
 
@@ -99,6 +133,7 @@
             <p>© 2026 HawkerHub. All rights reserved.</p>
         </div>
     </footer>
+    <script src="./tray.js"></script>
 </body>
 
 </html>
