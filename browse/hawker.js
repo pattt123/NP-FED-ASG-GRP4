@@ -41,7 +41,6 @@ async function loadStalls() {
             
             const subtext = document.createElement("div");
             subtext.className = "stallsubtext";
-            subtext.innerHTML = "<span>Best Sellers:</span>";
             
             textSection.appendChild(stallName);
             textSection.appendChild(stallDescription);
