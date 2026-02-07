@@ -62,7 +62,7 @@ buttonElement.addEventListener('click', async () => {
         );
 
         // 7. Write to Firestore
-        await newUser.write();
+        //await newUser.write();
 
         // 8. Log user in
         newUser.logIn();
@@ -76,5 +76,10 @@ buttonElement.addEventListener('click', async () => {
     }
 }); 
 
+let loginLink = document.getElementById("login")
+loginLink.addEventListener("click", async () => {
+    window.location.href = "/account/login.html";
+});
+
 //References
-//Source: OpenAI. (2026). ChatGPT (GPT-4.1) [Large language model]. https://chat.openai.com/
+//Source: OpenAI. (2026). ChatGPT (GPT-5.2) [Large language model]. https://chat.openai.com/
