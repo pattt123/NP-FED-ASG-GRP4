@@ -4,9 +4,6 @@
     box-sizing: border-box;
 }
 
-/* When embedded on other pages, do not change the page body layout */
-
-/* Style for the tray trigger when embedded in pages (uses #tray element) */
 #tray {
     display: inline-flex;
     align-items: center;
@@ -16,10 +13,7 @@
     color: white ;
     border-radius: 0.5rem;
     cursor: pointer;
-    box-shadow: 0 0.25rem 1.25rem var(--color-zinc-500);
-}
-#tray:hover {
-    color: var(--color-orange-300) ;
+    box-shadow: 0 0.25rem 0.25rem var(--color-zinc-500);
 }
 
 #tray section {

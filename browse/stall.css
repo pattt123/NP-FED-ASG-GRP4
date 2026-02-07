@@ -15,8 +15,9 @@ hr {
     border-width: 1px;
     box-shadow: 0 2px 4px var(--color-zinc-300);
 }
+
 #tray:hover{
-  color:var(--color-orange-500)
+    box-shadow: 0 0.25rem 0.75rem var(--color-zinc-500)
 }
 #stalldetails{
     padding:2rem;
@@ -63,7 +64,6 @@ body{
 }
 .dish:hover{
   border-color:var(--color-zinc-500 );
-  transition: 0.3s;
 }
 .dishtext{
     display:flex;
@@ -105,60 +105,6 @@ body{
     width:25rem;
 }
 
-
-.footer {
-    margin-top: 2rem;
-    background-color: var(--color-orange-400);
-    padding: 40px 20px 20px;
-}
-
-.footer-container {
-    max-width: 1200px;
-    margin: auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 30px;
-}
-.footer-section h3,
-.footer-section h4 {
-    margin-bottom: 12px;
-    color: black;
-}
-
-.footer-section p {
-    font-size: 14px;
-    line-height: 1.6;
-    color: white;
-}
-
-.footer-section ul {
-    list-style: none;
-    padding: 0;
-}
-
-.footer-section ul li {
-    margin-bottom: 8px;
-}
-
-.footer-section ul li a {
-    text-decoration: none;
-    color: white;
-    font-size: 14px;
-    transition: color 0.3s;
-}
-
-.footer-section ul li a:hover {
-    color: var(--color-zinc-500);
-}
-
-.footer-bottom {
-    margin-top: 30px;
-    text-align: center;
-    border-top: 1px solid black;
-    padding-top: 15px;
-    font-size: 13px;
-    color: white;
-}
 .addtocart{
     font-size:var(--font-2xl);
     background-color:var(--color-orange-400);
@@ -168,6 +114,6 @@ body{
     border-radius:0.5rem;
 }
 .addtocart:hover{
-    background-color:var(--color-zinc-500);
-
+    box-shadow: 0 0.25rem 0.75rem var(--color-zinc-500);
+    border-color:var(--color-orange-400);
 }
