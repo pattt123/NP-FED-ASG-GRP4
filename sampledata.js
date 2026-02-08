@@ -6,14 +6,14 @@ import { User } from "./lib/user.js"
 
 /* Partially generated using Claude Sonnet 4.5*/
 
-const stall0 = new Stall("894e7361-4ce1-453d-96c3-6f16573ea440", "Bob's Chicken Rice", "Best Chicken Rice in Singapore!", "https://img.potassium.sh/images/bcaaa18e-406c-411a-a340-cf453d3ec7e9.jpg", [])
+const stall0 = new Stall("894e7361-4ce1-453d-96c3-6f16573ea440", "Bob's Chicken Rice", "Best Chicken Rice in Singapore!", "https://img.potassium.sh/images/0d90bcba-cd3c-4eea-84ba-a53b4af651e5.jpg", [])
 const menuitems0 = [
-    new MenuItem("7bb7ec0c-51ab-4c76-aa7a-cd8cf4965a8a", stall0.id, "Steamed Chicken Rice", "Steamed chicken with fragrent rice", "https://img.potassium.sh/images/e4d9773f-8376-4940-ab48-94c6dc022c37.jpg", 5),
-    new MenuItem("4901828a-0428-4406-895a-ee02669d1d15", stall0.id, "Roast Chicken Rice", "Roasted chicken with fragrent rice", "https://img.potassium.sh/images/316ce228-241f-4810-b1a9-d2139d47e15d.jpg", 5),
+    new MenuItem("7bb7ec0c-51ab-4c76-aa7a-cd8cf4965a8a", stall0.id, "Steamed Chicken Rice", "Steamed chicken with fragrent rice", "https://img.potassium.sh/images/996f3ea4-8591-4ab3-a4ff-779264c7070c.jpg", 5),
+    new MenuItem("4901828a-0428-4406-895a-ee02669d1d15", stall0.id, "Roast Chicken Rice", "Roasted chicken with fragrent rice", "https://img.potassium.sh/images/7f15e517-6db1-4d33-843d-133cf657a894.jpg", 5),
     new MenuItem("0cf4541a-fd07-42ce-b8be-4bd4d6887e87", stall0.id,
-        "Steamed Chicken Drumstick Rice", "Steamed chicken drumstick with fragrent rice", "https://img.potassium.sh/images/e4d9773f-8376-4940-ab48-94c6dc022c37.jpg", 6),
+        "Steamed Chicken Drumstick Rice", "Steamed chicken drumstick with fragrent rice", "https://img.potassium.sh/images/dc10dc7e-7d93-45d1-9a3d-08d6c84dd7fb.jpg", 6),
     new MenuItem("0513c541-9ea6-482f-ba2a-18366c0100a4", stall0.id,
-        "Roast Chicken Drumstick Rice", "Roasted chicken drumstick with fragrent rice", "https://img.potassium.sh/images/316ce228-241f-4810-b1a9-d2139d47e15d.jpg", 6),
+        "Roast Chicken Drumstick Rice", "Roasted chicken drumstick with fragrent rice", "https://img.potassium.sh/images/a0a70850-ae47-4ba2-9046-f821afe2e5b2.jpg", 6),
 ]
 stall0.menuitems = menuitems0
 stall0.write()
@@ -21,45 +21,45 @@ const userS0 = new User("a0f9bf40-3f8a-40dd-904b-8364503201d4", "testuser", "tes
 userS0.write()
 userS0.logIn()
 
-const stall1 = new Stall("a1b2c3d4-e5f6-7890-1234-567890abcdef", "Satay Street", "Authentic charcoal-grilled satay with peanut sauce", "https://unsplash.com/photos/chicken-satay-with-a-side-of-pickled-vegetables-6P5wShC1sDI", [])
+const stall1 = new Stall("a1b2c3d4-e5f6-7890-1234-567890abcdef", "Satay Street", "Authentic charcoal-grilled satay with peanut sauce", "https://img.potassium.sh/images/76589c03-f0ba-4c01-bf3c-9fa851188a9d.jpg", [])
 const menuitems1 = [
-    new MenuItem("b1c2d3e4-f5a6-7890-1234-567890abcdef", stall1.id, "Chicken Satay", "Tender chicken skewers, grilled to perfection", "https://unsplash.com/photos/a-white-plate-topped-with-skewers-of-food-next-to-a-bowl-of-rice-Hk_1JZc7xMc", 0.80),
-    new MenuItem("c2d3e4f5-a6b7-8901-2345-67890abcdef0", stall1.id, "Beef Satay", "Marinated beef skewers, smoky and flavourful", "https://unsplash.com/photos/meat-sizzling-on-a-hot-grill-with-steam-rising-oiS-Tjtemvs", 0.90),
-    new MenuItem("d3e4f5a6-b7c8-9012-3456-7890abcdef01", stall1.id, "Mutton Satay", "Succulent mutton skewers, rich and aromatic", "https://unsplash.com/photos/man-grilling-meat-skewers-7iRdSsPbuEA", 1.00),
-    new MenuItem("e4f5a6b7-c8d9-0123-4567-890abcdef012", stall1.id, "Peanut Sauce", "Rich and nutty peanut dipping sauce", "https://unsplash.com/photos/a-stack-of-rice-cakes-with-peanut-butter-on-top-MN3QFnbZEDY", 2.00),
+    new MenuItem("b1c2d3e4-f5a6-7890-1234-567890abcdef", stall1.id, "Chicken Satay", "Tender chicken skewers, grilled to perfection", "https://img.potassium.sh/images/a314c7bd-87a1-40cb-a213-49427fe3abf3.jpg", 0.80),
+    new MenuItem("c2d3e4f5-a6b7-8901-2345-67890abcdef0", stall1.id, "Beef Satay", "Marinated beef skewers, smoky and flavourful", "https://img.potassium.sh/images/a314c7bd-87a1-40cb-a213-49427fe3abf3.jpg", 0.90),
+    new MenuItem("d3e4f5a6-b7c8-9012-3456-7890abcdef01", stall1.id, "Mutton Satay", "Succulent mutton skewers, rich and aromatic", "https://img.potassium.sh/images/a314c7bd-87a1-40cb-a213-49427fe3abf3.jpg", 1.00),
+    new MenuItem("e4f5a6b7-c8d9-0123-4567-890abcdef012", stall1.id, "Peanut Sauce", "Rich and nutty peanut dipping sauce", "https://img.potassium.sh/images/1df882c6-233f-41c7-8c82-455231e082bc.jpg", 2.00),
 ]
 stall1.menuitems = menuitems1
 stall1.write()
 const userS1 = new User("b0f9bf40-3f8a-40dd-904b-8364503201d4", "alice", "alice", "Alice", Date.UTC(2010, 5, 15), stall1.id)
 userS1.write()
 
-const stall2 = new Stall("f6e5d4c3-b2a1-0987-6543-210fedcba987", "Laksa Delight", "Creamy and spicy coconut noodle soup", "https://unsplash.com/photos/a-bowl-of-laksa-with-shrimp-and-noodles-l-U7c20aN40", [])
+const stall2 = new Stall("f6e5d4c3-b2a1-0987-6543-210fedcba987", "Laksa Delight", "Creamy and spicy coconut noodle soup", "https://img.potassium.sh/images/034ead58-d4e7-473d-85cc-cf3e23639a27.jpg", [])
 const menuitems2 = [
-    new MenuItem("g7f6e5d4-c3b2-a109-8765-43210fedcba9", stall2.id, "Katong Laksa", "Traditional Katong laksa with thick vermicelli", "https://unsplash.com/photos/a-bowl-of-laksa-with-shrimp-and-noodles-l-U7c20aN40", 6.50),
-    new MenuItem("h8g7f6e5-d4c3-b2a1-0987-6543210fedcb", stall2.id, "Prawn Laksa", "Laksa with fresh prawns and fish cake", "https://unsplash.com/photos/a-bowl-of-food-on-a-wooden-table-q-M54hVn7w0", 7.50),
-    new MenuItem("i9h8g7f6-e5d4-c3b2-a109-876543210fed", stall2.id, "Chicken Laksa", "Laksa with tender shredded chicken", "https://unsplash.com/photos/a-bowl-of-chicken-laksa-with-a-lime-wedge-and-a-spoon-f2X9o-s_qY0", 6.00),
+    new MenuItem("g7f6e5d4-c3b2-a109-8765-43210fedcba9", stall2.id, "Katong Laksa", "Traditional Katong laksa with thick vermicelli", "https://img.potassium.sh/images/8978a124-51b3-4db1-bfc7-a8209d526678.jpg", 6.50),
+    new MenuItem("h8g7f6e5-d4c3-b2a1-0987-6543210fedcb", stall2.id, "Prawn Laksa", "Laksa with fresh prawns and fish cake", "https://img.potassium.sh/images/441d9775-6095-4ed0-bd2f-35d34b03c41d.jpg", 7.50),
+    new MenuItem("i9h8g7f6-e5d4-c3b2-a109-876543210fed", stall2.id, "Chicken Laksa", "Laksa with tender shredded chicken", "https://img.potassium.sh/images/75d6ac8a-b4ba-45b9-8299-f00d545f0556.jpg", 6.00),
 ]
 stall2.menuitems = menuitems2
 stall2.write()
 const userS2 = new User("c0f9bf40-3f8a-40dd-904b-8364503201d4", "tom", "tom", "Tom", Date.UTC(2012, 8, 20), stall2.id)
 userS2.write()
 
-const stall3 = new Stall("fedcba98-7654-3210-fedc-ba9876543210", "Hokkien Mee Master", "Wok-fried Hokkien Mee with rich prawn broth", "https://unsplash.com/photos/a-plate-of-noodles-with-shrimp-and-vegetables-R23v5K8_yv0", [])
+const stall3 = new Stall("fedcba98-7654-3210-fedc-ba9876543210", "Hokkien Mee Master", "Wok-fried Hokkien Mee with rich prawn broth", "https://img.potassium.sh/images/d9c3ec99-1705-467d-bf13-b619a85be1a5.jpg", [])
 const menuitems3 = [
-    new MenuItem("fedcba98-7654-3210-fedc-ba9876543210", stall3.id, "Prawn Hokkien Mee", "Stir-fried yellow noodles and vermicelli with prawns", "https://unsplash.com/photos/a-plate-of-noodles-with-shrimp-and-vegetables-R23v5K8_yv0", 7.00),
-    new MenuItem("12345678-90ab-cdef-1234-567890abcdef", stall3.id, "Hokkien Mee with Pork", "Hokkien Mee with sliced pork and crispy lard", "https://unsplash.com/photos/a-plate-of-noodles-with-pork-and-vegetables-v6x2Y0Z3P4s", 7.50),
-    new MenuItem("abcdef01-2345-6789-0abc-def012345678", stall3.id, "Extra Lard", "Crispy pork lard for an extra crunch", "https://unsplash.com/photos/a-close-up-of-a-bowl-of-fried-pork-belly-with-sauce-Y8sK2P5_h8c", 1.00),
+    new MenuItem("fedcba98-7654-3210-fedc-ba9876543210", stall3.id, "Prawn Hokkien Mee", "Stir-fried yellow noodles and vermicelli with prawns", "https://img.potassium.sh/images/d9c3ec99-1705-467d-bf13-b619a85be1a5.jpg", 7.00),
+    new MenuItem("12345678-90ab-cdef-1234-567890abcdef", stall3.id, "Hokkien Mee with Pork", "Hokkien Mee with sliced pork and crispy lard", "https://img.potassium.sh/images/d9c3ec99-1705-467d-bf13-b619a85be1a5.jpg", 7.50),
+    new MenuItem("abcdef01-2345-6789-0abc-def012345678", stall3.id, "Char Kway Teow", "Stir-fried char kway teow with tender beef and savoury sause", "https://img.potassium.sh/images/8728f066-fc40-49fa-abbe-edf9201533e5.jpg", 1.00),
 ]
 stall3.menuitems = menuitems3
 stall3.write()
 const userS3 = new User("d0f9bf40-3f8a-40dd-904b-8364503201d4", "dick", "dick", "Dick", Date.UTC(2015, 3, 10), stall3.id)
 userS3.write()
 
-const stall4 = new Stall("09876543-210f-edcb-a987-6543210fedcb", "Char Kway Teow King", "Smoky and flavourful stir-fried flat rice noodles", "https://unsplash.com/photos/a-plate-of-noodles-with-shrimp-and-vegetables-oQzL3bW2X0I", [])
+const stall4 = new Stall("09876543-210f-edcb-a987-6543210fedcb", "Prata Parlor", "Crispy Prata and other authentic Indian Food", "https://img.potassium.sh/images/cdf6341c-a6f2-45c0-8f35-ff020abca9d9.jpg", [])
 const menuitems4 = [
-    new MenuItem("10987654-3210-fedc-ba98-76543210fedc", stall4.id, "Classic Char Kway Teow", "Stir-fried flat rice noodles with cockles and lap cheong", "https://unsplash.com/photos/a-plate-of-noodles-and-chopsticks-on-a-table-Chriswu", 6.00),
-    new MenuItem("210fedcb-a987-6543-210f-edcba9876543", stall4.id, "Special Char Kway Teow", "Larger portion with extra prawns and squid", "https://unsplash.com/photos/a-plate-of-noodles-with-shrimp-and-vegetables-W9r9Y4zG1b4", 8.00),
-    new MenuItem("3210fedc-ba98-7654-3210-fedcba987654", stall4.id, "Duck Egg Char Kway Teow", "Char Kway Teow with richer duck egg flavour", "https://unsplash.com/photos/a-food-stall-and-a-scooter-in-taiwan-RaymondYeung", 7.00),
+    new MenuItem("10987654-3210-fedc-ba98-76543210fedc", stall4.id, "Plain Prata", "Crispy on the Outside, Soft on the Inside", "https://img.potassium.sh/images/42953f1a-52d6-4921-8b05-bdeb482c68d1.jpg", 6.00),
+    new MenuItem("210fedcb-a987-6543-210f-edcba9876543", stall4.id, "Egg Prata", "Flaky Prata with Egg Inside", "https://img.potassium.sh/images/e5948057-cc4b-43cc-9f42-27b428468531.jpg", 8.00),
+    new MenuItem("3210fedc-ba98-7654-3210-fedcba987654", stall4.id, "Coin Prata", "Crispy Mini Snack Pratas", "https://img.potassium.sh/images/93be71ef-c95a-4ffe-ab6b-dd8196938a59.jpg", 7.00),
 ]
 stall4.menuitems = menuitems4
 stall4.write()
