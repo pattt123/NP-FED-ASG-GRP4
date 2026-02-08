@@ -2,6 +2,7 @@ import { User } from "/lib/user.js";
 import { Stall } from "/lib/stall.js";
 
 async function func() {
+    // Load from database and ensure user is allowed to access this page
     const user = await User.loggedInUser()
     if (user == undefined) {
         window.location.href = "/"
@@ -12,22 +13,34 @@ async function func() {
         window.location.href = "/"
         return;
     }
+
+    // Load stall information
     const stallNameElement = document.getElementsByTagName("h1")[0]
     stallNameElement.textContent = stall.name
     
+    // Check if a filter is applied
     const params = new URLSearchParams(window.location.search);
     let filter = params.get("filter") ?? "active"
     if (filter != "active" && filter != "received" && filter != "preparing" && filter != "ready" && filter != "completed") {
         filter = "active"
     }
 
+    // Update css based on filter
     const selectedElement = document.getElementById(filter)
     if (selectedElement != undefined) {
         selectedElement.classList.add("selected")
     }
     
+    const ordersComponent = document.getElementById("orders")
+
     const orders = await stall.getAllOrders()
     let orderComponents = ""
+    if (orders.length == 0) {
+        orderComponents = "There are no orders to show!"
+        ordersComponent.innerHTML = orderComponents 
+    }
+
+    // Load orders dynamically
     for (const order of orders) {
         if (filter == "active") {
             if (order.status == "completed") {
@@ -57,9 +70,8 @@ async function func() {
         })
         component = component.replace("%%items%%", items)
         orderComponents = orderComponents + component 
+        ordersComponent.innerHTML = orderComponents 
     }
-    const ordersComponent = document.getElementById("orders")
-    ordersComponent.innerHTML = orderComponents 
 }
 const itemComponent = `
 <span>%%qty%%x %%name%%</span>

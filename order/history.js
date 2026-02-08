@@ -43,8 +43,8 @@ async function loadOrderHistory() {
             const subtotal = typeof order.calculateSubtotal === 'function' ? order.calculateSubtotal() : 0;
             const total = subtotal + (subtotal * 0.1);
 
-            const displayItems = (order.orderitems || []).slice(0, 3).map(item => `${item.qty}x ${item.name}`).join(', ');
-            const moreItems = (order.orderitems || []).length > 3 ? '...' : '';
+            const displayItems = (order.orderitems || []).slice(0, 3).map(item => `<span>${item.qty}x ${item.name}</span>`).join('');
+            const moreItems = (order.orderitems || []).length > 3 ? '<span>...</span>' : '';
 
             const statusClass = order.status === 'completed' ? 'completed' : 'active';
             const statusText = order.status === 'completed' ? 'COMPLETED' : 'ACTIVE';
