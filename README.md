@@ -13,4 +13,5 @@ The intended main user to test with is ``testuser``, with the same username and 
 The basic named users are stall owners, while the 'real' names are customers with orders.
 
 ## Credits
-Images used for stalls and menu items are taken from : https://www.foodpanda.sg/
+Icons: https://lucide.dev/ 
+Food/Stall Images: https://www.foodpanda.sg/
