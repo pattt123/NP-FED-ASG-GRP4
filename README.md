@@ -11,3 +11,6 @@ To generate and write the sample data to the firestore database, head to /sample
 
 The intended main user to test with is ``testuser``, with the same username and password.
 The basic named users are stall owners, while the 'real' names are customers with orders.
+
+## Credits
+Images used for stalls and menu items are taken from : https://www.foodpanda.sg/
