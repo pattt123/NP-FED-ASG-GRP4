@@ -3,6 +3,7 @@ import { Stall } from "/lib/stall.js";
 import { Order } from "/lib/order.js";
 
 async function func() {
+    // Load info from database and check that the stall owner is allowed to access this page
     const user = await User.loggedInUser()
     if (user == undefined) {
         window.location.href = "/"
@@ -22,6 +23,7 @@ async function func() {
         return;
     }
 
+    // Load information into elements
     const h1Element = document.getElementsByTagName("h1")[0]
     h1Element.textContent = h1Element.textContent.replace("-------", order.number)
 
@@ -56,6 +58,7 @@ async function func() {
     totalElement.textContent = totalElement.textContent.replace("?", total.toFixed(2));
 
 
+    // Dynamically insert order items
     const itemsElement = document.getElementById("items")
     let items = ""
     order.orderitems.forEach(item => {
@@ -66,6 +69,7 @@ async function func() {
     })
     itemsElement.innerHTML = items
 
+    // Order status change button listener
     const buttons = document.getElementsByTagName("button")
     for (let i = 0; i < buttons.length; i++) {
         let button = buttons[i]

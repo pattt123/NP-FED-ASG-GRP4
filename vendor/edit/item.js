@@ -4,6 +4,7 @@ import { Stall } from "/lib/stall.js";
 import { IMGAPIKEY } from "/env.js";
 
 async function func() {
+    // Load data from database and check that stall owner is allowed to edit this item
     const user = await User.loggedInUser()
     if (user == undefined) {
         window.location.href = "/"
@@ -31,7 +32,8 @@ async function func() {
     const priceElement = document.getElementById("price")
     const descElement = document.getElementById("desc")
     const submit = document.getElementById("submit")
-
+    
+    // Load exisitng menu item details if the id is valid, if not will be creating new menu item
     let image = ""
     if (menuitem == undefined) {
         submit.textContent = "Create"
@@ -43,6 +45,7 @@ async function func() {
         descElement.value = menuitem.description
     }
 
+    // Handle form submission and updating of the menu item
     submit.addEventListener("click", async () => {
         const errorElement = document.getElementById("error")
         if (!errorElement.classList.contains("hidden")) {
@@ -68,7 +71,8 @@ async function func() {
 
         const name = nameElement.value
         const desc = descElement.value;
-
+        
+        // Handle image uploading
         if (fileElement.files && fileElement.files[0]) {
             const imageFile = fileElement.files[0];
             try {

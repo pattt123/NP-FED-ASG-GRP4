@@ -2,6 +2,7 @@ import { User } from "/lib/user.js";
 import { Stall } from "/lib/stall.js";
 
 async function func() {
+    // Load data from database and check that stall owner is allowed to access this page
     const user = await User.loggedInUser()
     if (user == undefined) {
         window.location.href = "/"
@@ -13,6 +14,7 @@ async function func() {
         return;
     }
 
+    // Load stall details
     const imgElement = document.getElementById("stallimg")
     imgElement.src = stall.image
 
@@ -24,6 +26,7 @@ async function func() {
 
     const itemsElement = document.getElementById("items")
 
+    // Load each menu item
     let items = ""
     stall.menuitems.forEach(menuitem => {
         let component = itemComponent.replace("%%id%%", menuitem.id)
@@ -35,6 +38,7 @@ async function func() {
         itemsElement.innerHTML = items
     })
 
+    // Main Stall info editing
     const nameInput = document.getElementById("name")
     nameInput.value = stall.name
     const descInput = document.getElementById("desc")
@@ -42,6 +46,7 @@ async function func() {
 
     const editElement = document.getElementById("edit")
     const saveElement = document.getElementById("save")
+
 
     editElement.addEventListener("click", async () => {
         h1Element.classList.add("hidden")
