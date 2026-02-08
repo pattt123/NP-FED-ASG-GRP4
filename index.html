@@ -8,7 +8,8 @@
     <link href="/css/colors.css" rel="stylesheet">
     <link href="/css/text.css" rel="stylesheet">
     <link href="./index.css" rel="stylesheet">
-    <link href="/css/footer.css" rel="stylesheet">
+    <link href="./css/footer.css" rel="stylesheet">
+    
     <title>myHawkerSG | Vendor Home</title>
 </head>
 
@@ -17,8 +18,9 @@
     <section id="head">
         <nav>
             <a href="../order/history.html" id="orderhistory">Order History</a>
-            <a href="../account/login.html" id="login">Login</a>
-
+            <div id="authButtons">
+                <a href="../account/login.html" id="login">Login</a>
+            </div>
         </nav>
         <h1>myHawkerSG</h1>
         <div class="search-container">
@@ -28,7 +30,7 @@
     </section>
 
     <section id="hawkers">
-        <div class="hawker">
+        <a href="./browse/toapayoh.html" class="hawker">
             <div id="hawkerimages">
                 <img id="imagetopleft"
                     src="https://wonderwall.sg/images/default-source/content/dam/wonderwall/images/2023/07/5-famous-local-comfort-foods-that-are-kid-friendly/sgkidfriendlyfood_rectangle.jpg?sfvrsn=7766f842_1" alt="dish">
@@ -47,8 +49,8 @@
                     <span>Operating Hours: 7am - 9pm</span>
                 </div>
             </div>
-        </div>
-        <a href="./browse/hawker.html" class="hawker">
+        </a>
+        <a href="./browse/maxwell.html" class="hawker">
             <div id="hawkerimages">
                 <img id="imagetopleft"
                     src="https://eatbook.sg/wp-content/uploads/2021/08/rare-hawker-dishes-oyster-cake.jpg" alt="dish">
@@ -68,7 +70,7 @@
                 </div>
             </div>
         </a>
-        <div class="hawker">
+        <a href="./browse/bukitmerah.html" class="hawker">
             <div id="hawkerimages">
                 <img id="imagetopleft"
                     src="https://cassette.sphdigital.com.sg/image/womensweekly/8cb43eaf00987f131f867861f701524161dc2578b7a7660e984169fcc0151f41?w=1000&q=85" alt="dish">
@@ -87,7 +89,7 @@
                     <span>Operating Hours: 6.30am - 8pm</span>
                 </div>
             </div>
-        </div>
+        </a>
     </section>
 
      <footer class="footer">
@@ -135,5 +137,5 @@
     </footer>
 
 </body>
-<script src="index.js"></script>
+<script type="module" src="index.js"></script>
 </html>
