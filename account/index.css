@@ -20,7 +20,7 @@ header {
     justify-content: space-between;
 
 }
-header a {
+header a,button {
     padding: 8px;
     padding-left: 16px;
     padding-right: 16px;

@@ -54,6 +54,12 @@ async function func() {
         await user.write();
         window.location.reload()
     });
+
+    document.getElementById("logout").addEventListener("click", () => {
+        localStorage.removeItem("userid")
+        localStorage.removeItem("username")
+        window.location.href = "/account/login.html"
+    })
 }
 
 await func()
