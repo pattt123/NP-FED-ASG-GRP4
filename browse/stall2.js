@@ -2,19 +2,18 @@ import { Stall } from "/lib/stall.js";
 import { MenuItem } from "/lib/menuitem.js";
 
 async function loadStallPage() {
-    // Step 1: Get the ID from URL params FIRST
+  
     const params = new URLSearchParams(window.location.search);
     let id = params.get("id");
 
-    // Step 2: Get the stall data
     let stall = await Stall.getStallById(id);
-    // Step 3: Check if stall exists
+ 
     if (!stall) {
         window.history.back();
-        return;  // Added return to stop execution
+        return;  
     }
 
-    // Build stall details HTML
+
     let detailsHTML = `
         <span id="stallimage">
             <img src="${stall.image}" alt="${stall.name}">
@@ -25,10 +24,10 @@ async function loadStallPage() {
         </div>
     `;
 
-    // Build dishes HTML
+   
     let dishesHTML = "";
     stall.menuitems.forEach(menuitem => {
-        // use data attributes on button so we can attach handler after
+       
         dishesHTML += `
         <div class="dish">
             <div class="dishtext">
@@ -58,11 +57,11 @@ async function loadStallPage() {
         `;
     });
 
-    // Insert into containers
+ 
     document.getElementById("dishes").innerHTML = dishesHTML;
     document.getElementById("stalldetails").innerHTML = detailsHTML;
 
-    // Save the current stall id so the tray can link back to this stall
+ 
     try {
         if (stall && stall.id) localStorage.setItem('lastStall', stall.id);
     } catch (e) {
@@ -70,13 +69,13 @@ async function loadStallPage() {
     }
 }
 
-// simple escaping for inline data attributes
+
 function escapeHtml(str) {
     if (!str) return '';
     return String(str).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 }
 
-// attach handlers after DOM insertion
+
 function attachAddToCartHandlers() {
     document.querySelectorAll('.addtocart').forEach(btn => {
         btn.addEventListener('click', function (e) {
@@ -85,7 +84,7 @@ function attachAddToCartHandlers() {
             const description = this.dataset.desc || '';
             const price = parseFloat(this.dataset.price) || 0;
             const image = this.dataset.image || '';
-            // call addToCart from tray.js
+          
             try {
                 addToCart({ id, name, description, price, image, stall: localStorage.getItem('lastStall') });
             } catch (err) {
@@ -95,11 +94,11 @@ function attachAddToCartHandlers() {
     });
 }
 
-// after we insert HTML, attach handlers
+
 const originalLoad = loadStallPage;
 async function loadStallPageWrapper() {
     await originalLoad();
     attachAddToCartHandlers();
 }
-// Call the wrapper when page loads
+
 document.addEventListener('DOMContentLoaded', loadStallPageWrapper);

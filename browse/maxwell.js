@@ -10,14 +10,14 @@ import {
 
 async function loadStalls() {
     try {
-        // Fetch stalls for Maxwell Food Centre (stall IDs: a1b2c3d4-e5f6-7890-1234-567890abcdef and e4f5a6b7-c8d9-0123-4567-890abcdef012)
+
         const maxwellStallIds = [
-            "a1b2c3d4-e5f6-7890-1234-567890abcdef", // Satay Street
-            "f6e5d4c3-b2a1-0987-6543-210fedcba987"   // Laksa Delight
+            "a1b2c3d4-e5f6-7890-1234-567890abcdef", 
+            "f6e5d4c3-b2a1-0987-6543-210fedcba987"   
         ];
         
         const stallsContainer = document.getElementById("stalls");
-        stallsContainer.innerHTML = ""; // Clear existing content
+        stallsContainer.innerHTML = ""; 
         
         for (const stallId of maxwellStallIds) {
             const stallsRef = collection(Database, "stalls");
@@ -27,14 +27,14 @@ async function loadStalls() {
             for (const doc of snapshot.docs) {
                 const stallData = doc.data();
                 
-                // Create stall link
+             
                 const stallLink = document.createElement("a");
                 stallLink.href = `/browse/stall.html?id=${stallData.id}`;
                 
                 const stallDiv = document.createElement("div");
                 stallDiv.className = "stall";
                 
-                // Create stall text section
+          
                 const textSection = document.createElement("div");
                 textSection.className = "stalltext";
                 
@@ -53,11 +53,11 @@ async function loadStalls() {
                 textSection.appendChild(stallDescription);
                 textSection.appendChild(subtext);
                 
-                // Create images section
+      
                 const imagesSection = document.createElement("section");
                 imagesSection.className = "images";
                 
-                // Add stall image (if available)
+         
                 if (stallData.image) {
                     const img1 = document.createElement("img");
                     img1.src = stallData.image;
@@ -65,7 +65,7 @@ async function loadStalls() {
                     imagesSection.appendChild(img1);
                 }
                 
-                // Add placeholder if no image
+               
                 if (!stallData.image) {
                     const img = document.createElement("img");
                     img.src = "https://via.placeholder.com/272x192?text=No+Image";
@@ -85,5 +85,5 @@ async function loadStalls() {
     }
 }
 
-// Load stalls when page loads
+
 loadStalls();

@@ -10,14 +10,14 @@ import {
 
 async function loadStalls() {
     try {
-        // Fetch stalls for Bukit Merah Food Centre (stall IDs: fedcba98-7654-3210-fedc-ba9876543210 and additional one)
+
         const bukitMerahStallIds = [
-            "fedcba98-7654-3210-fedc-ba9876543210", // Hokkien Mee Master
-            "f6e5d4c3-b2a1-0987-6543-210fedcba987"   // Laksa Delight (for variety)
+            "fedcba98-7654-3210-fedc-ba9876543210", 
+            "f6e5d4c3-b2a1-0987-6543-210fedcba987"  
         ];
         
         const stallsContainer = document.getElementById("stalls");
-        stallsContainer.innerHTML = ""; // Clear existing content
+        stallsContainer.innerHTML = ""; 
         
         for (const stallId of bukitMerahStallIds) {
             const stallsRef = collection(Database, "stalls");
@@ -53,11 +53,11 @@ async function loadStalls() {
                 textSection.appendChild(stallDescription);
                 textSection.appendChild(subtext);
                 
-                // Create images section
+             
                 const imagesSection = document.createElement("section");
                 imagesSection.className = "images";
                 
-                // Add stall image (if available)
+              
                 if (stallData.image) {
                     const img1 = document.createElement("img");
                     img1.src = stallData.image;
@@ -65,7 +65,7 @@ async function loadStalls() {
                     imagesSection.appendChild(img1);
                 }
                 
-                // Add placeholder if no image
+             
                 if (!stallData.image) {
                     const img = document.createElement("img");
                     img.src = "https://via.placeholder.com/272x192?text=No+Image";
@@ -85,5 +85,5 @@ async function loadStalls() {
     }
 }
 
-// Load stalls when page loads
+
 loadStalls();

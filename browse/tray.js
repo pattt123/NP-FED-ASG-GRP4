@@ -8,7 +8,7 @@ function loadCart() {
 
 let cartData = [];
 
-// Load cart from localStorage or use sample data
+
 function loadCart() {
     const savedCart = localStorage.getItem("cart");
     if (savedCart) {
@@ -23,13 +23,10 @@ function saveCart() {
     localStorage.setItem("cart", JSON.stringify(cartData));
 }
 
-/**
- * Add an item to the cart. `item` should be an object with at least
- * `{id, name, price}`. Optional: `description`, `image`, `stall`.
- */
+
 function addToCart(item) {
     if (!item || !item.id) return;
-    // ensure cartData is loaded
+ 
     if (!cartData) cartData = [];
     const existing = cartData.find(i => String(i.id) === String(item.id));
     if (existing) {
@@ -49,7 +46,7 @@ function addToCart(item) {
     saveCart();
     renderCart();
 
-    // open the tray so user sees the update
+  
     try {
         const overlay = document.getElementById('overlay');
         const cartTray = document.getElementById('cartTray');
@@ -57,7 +54,7 @@ function addToCart(item) {
             overlay.classList.add('active');
             cartTray.classList.add('active');
         }
-    } catch (e) { /* ignore */ }
+    } catch (e) { }
 }
 
 function toggleCart() {
@@ -131,7 +128,7 @@ function checkout() {
         return;
     }
     const { total } = calculateTotals();
-    // Save current cart and navigate to checkout page
+  
     saveCart();
     window.location.href = `/order/checkout.html`;
 }
@@ -140,7 +137,7 @@ function goToLastStall() {
     try {
         const last = localStorage.getItem('lastStall');
         if (last) {
-            // close the tray first
+         
             const overlay = document.getElementById('overlay');
             const cartTray = document.getElementById('cartTray');
             if (overlay) overlay.classList.remove('active');
@@ -151,10 +148,10 @@ function goToLastStall() {
     } catch (e) {
         console.warn('goToLastStall error', e);
     }
-    // fallback
+
     window.history.back();
 }
 
-// Initialize cart when page loads
+
 loadCart();
 renderCart();

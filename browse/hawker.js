@@ -8,26 +8,25 @@ import {
 
 async function loadStalls() {
     try {
-        // Fetch all stalls from Firestore
+      
         const stallsRef = collection(Database, "stalls");
         const snapshot = await getDocs(stallsRef);
         
         const stallsContainer = document.getElementById("stalls");
-        stallsContainer.innerHTML = ""; // Clear existing content
-        
-        // Iterate through all stalls and create elements
+        stallsContainer.innerHTML = ""; 
+     
         for (const doc of snapshot.docs) {
             const stallData = doc.data();
             const stallId = stallData.id;
             
-            // Create stall link and container
+         
             const stallLink = document.createElement("a");
             stallLink.href = `/browse/stall.html?id=${stallId}`;
             
             const stallDiv = document.createElement("div");
             stallDiv.className = "stall";
             
-            // Create stall text section
+         
             const textSection = document.createElement("div");
             textSection.className = "stalltext";
             
@@ -46,11 +45,10 @@ async function loadStalls() {
             textSection.appendChild(stallDescription);
             textSection.appendChild(subtext);
             
-            // Create images section
+      
             const imagesSection = document.createElement("section");
             imagesSection.className = "images";
-            
-            // Add stall image (if available)
+       
             if (stallData.image) {
                 const img1 = document.createElement("img");
                 img1.src = stallData.image;
@@ -58,8 +56,7 @@ async function loadStalls() {
                 imagesSection.appendChild(img1);
             }
             
-            // You could add best-selling items here if needed
-            // For now, just show the main stall image
+     
             if (!stallData.image) {
                 const img = document.createElement("img");
                 img.src = "https://via.placeholder.com/272x192?text=No+Image";
@@ -78,5 +75,5 @@ async function loadStalls() {
     }
 }
 
-// Load stalls when page loads
+
 loadStalls();
