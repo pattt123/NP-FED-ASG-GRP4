@@ -54,9 +54,9 @@ async function initializeAuthButtons() {
       
       if (user.stall && user.stall !== "") {
         const editStallButton = document.createElement("a");
-        editStallButton.href = "../vendor/edit/index.html";
-        editStallButton.id = "editstall";
-        editStallButton.textContent = "Edit Stall";
+        editStallButton.href = "../vendor/";
+        editStallButton.id = "managestall";
+        editStallButton.textContent = "Manage Stall";
         authButtonsContainer.appendChild(editStallButton);
       }
     } else {
