@@ -52,7 +52,7 @@ const menuitems3 = [
 ]
 stall3.menuitems = menuitems3
 stall3.write()
-const userS3 = new User("d0f9bf40-3f8a-40dd-904b-8364503201d4", "tom", "tom", "Dick", Date.UTC(2015, 3, 10), stall3.id)
+const userS3 = new User("d0f9bf40-3f8a-40dd-904b-8364503201d4", "dick", "dick", "Dick", Date.UTC(2015, 3, 10), stall3.id)
 userS3.write()
 
 const stall4 = new Stall("09876543-210f-edcb-a987-6543210fedcb", "Char Kway Teow King", "Smoky and flavourful stir-fried flat rice noodles", "https://unsplash.com/photos/a-plate-of-noodles-with-shrimp-and-vegetables-oQzL3bW2X0I", [])
@@ -63,7 +63,7 @@ const menuitems4 = [
 ]
 stall4.menuitems = menuitems4
 stall4.write()
-const userS4 = new User("e0f9bf40-3f8a-40dd-904b-8364503201d4", "tom", "tom", "Harry", Date.UTC(2018, 10, 5), stall4.id)
+const userS4 = new User("e0f9bf40-3f8a-40dd-904b-8364503201d4", "harry", "harry", "Harry", Date.UTC(2018, 10, 5), stall4.id)
 userS4.write()
 
 
@@ -331,3 +331,137 @@ const orderitemsX_18 = [
 ]
 const orderX_18 = new Order("z67ae056-d91a-4693-b146-b862f80fb250", "457-230", userC4.id, stall0.id, orderitemsX_18, "No chili", "preparing")
 orderX_18.write()
+
+const orderitemsT_1 = [
+    OrderItem.fromMenuItem(stall0.menuitems[0], 1),
+    OrderItem.fromMenuItem(stall0.menuitems[3], 1),
+]
+const orderT_1 = new Order("testuser-001-d91a-4693-b146-b862f80fb201", "763-189", userS0.id, stall0.id, orderitemsT_1, "No cilantro", "preparing")
+orderT_1.write()
+
+const orderitemsT_2 = [
+    OrderItem.fromMenuItem(stall1.menuitems[0], 5),
+    OrderItem.fromMenuItem(stall1.menuitems[3], 1),
+]
+const orderT_2 = new Order("testuser-002-d91a-4693-b146-b862f80fb202", "345-812", userS0.id, stall1.id, orderitemsT_2, "Extra spicy peanut sauce", "ready")
+orderT_2.write()
+
+const orderitemsT_3 = [
+    OrderItem.fromMenuItem(stall2.menuitems[1], 1),
+]
+const orderT_3 = new Order("testuser-003-d91a-4693-b146-b862f80fb203", "910-476", userS0.id, stall2.id, orderitemsT_3, "Add cockles", "completed")
+orderT_3.write()
+
+const orderitemsT_4 = [
+    OrderItem.fromMenuItem(stall3.menuitems[0], 2),
+    OrderItem.fromMenuItem(stall3.menuitems[2], 2),
+]
+const orderT_4 = new Order("testuser-004-d91a-4693-b146-b862f80fb204", "208-551", userS0.id, stall3.id, orderitemsT_4, "Less oil", "received")
+orderT_4.write()
+
+const orderitemsT_5 = [
+    OrderItem.fromMenuItem(stall4.menuitems[0], 1),
+    OrderItem.fromMenuItem(stall4.menuitems[2], 1),
+]
+const orderT_5 = new Order("testuser-005-d91a-4693-b146-b862f80fb205", "672-934", userS0.id, stall4.id, orderitemsT_5, "No beansprouts", "preparing")
+orderT_5.write()
+
+const orderitemsT_6 = [
+    OrderItem.fromMenuItem(stall0.menuitems[1], 2),
+]
+const orderT_6 = new Order("testuser-006-d91a-4693-b146-b862f80fb206", "115-780", userS0.id, stall0.id, orderitemsT_6, "Extra chili sauce", "ready")
+orderT_6.write()
+
+const orderitemsT_7 = [
+    OrderItem.fromMenuItem(stall1.menuitems[1], 8),
+]
+const orderT_7 = new Order("testuser-007-d91a-4693-b146-b862f80fb207", "882-309", userS0.id, stall1.id, orderitemsT_7, "Grilled medium", "completed")
+orderT_7.write()
+
+const orderitemsT_8 = [
+    OrderItem.fromMenuItem(stall2.menuitems[0], 1),
+    OrderItem.fromMenuItem(stall2.menuitems[2], 1),
+]
+const orderT_8 = new Order("testuser-008-d91a-4693-b146-b862f80fb208", "493-617", userS0.id, stall2.id, orderitemsT_8, "Mild spicy", "received")
+orderT_8.write()
+
+const orderitemsT_9 = [
+    OrderItem.fromMenuItem(stall3.menuitems[1], 1),
+    OrderItem.fromMenuItem(stall3.menuitems[2], 1),
+]
+const orderT_9 = new Order("testuser-009-d91a-4693-b146-b862f80fb209", "721-048", userS0.id, stall3.id, orderitemsT_9, "No prawns", "preparing")
+orderT_9.write()
+
+const orderitemsT_10 = [
+    OrderItem.fromMenuItem(stall4.menuitems[1], 1),
+]
+const orderT_10 = new Order("testuser-010-d91a-4693-b146-b862f80fb210", "130-890", userS0.id, stall4.id, orderitemsT_10, "Less sweet", "ready")
+orderT_10.write()
+
+const orderitemsT_11 = [
+    OrderItem.fromMenuItem(stall0.menuitems[0], 2),
+    OrderItem.fromMenuItem(stall0.menuitems[2], 1),
+]
+const orderT_11 = new Order("testuser-011-d91a-4693-b146-b862f80fb211", "567-213", userS0.id, stall0.id, orderitemsT_11, "More ginger", "completed")
+orderT_11.write()
+
+const orderitemsT_12 = [
+    OrderItem.fromMenuItem(stall1.menuitems[0], 10),
+    OrderItem.fromMenuItem(stall1.menuitems[2], 5),
+]
+const orderT_12 = new Order("testuser-012-d91a-4693-b146-b862f80fb212", "804-362", userS0.id, stall1.id, orderitemsT_12, "Mixed satay", "received")
+orderT_12.write()
+
+const orderitemsT_13 = [
+    OrderItem.fromMenuItem(stall2.menuitems[0], 2),
+]
+const orderT_13 = new Order("testuser-013-d91a-4693-b146-b862f80fb213", "259-701", userS0.id, stall2.id, orderitemsT_13, "No tofu puff", "preparing")
+orderT_13.write()
+
+const orderitemsT_14 = [
+    OrderItem.fromMenuItem(stall3.menuitems[0], 1),
+    OrderItem.fromMenuItem(stall3.menuitems[1], 1),
+]
+const orderT_14 = new Order("testuser-014-d91a-4693-b146-b862f80fb214", "631-987", userS0.id, stall3.id, orderitemsT_14, "Extra chili paste", "ready")
+orderT_14.write()
+
+const orderitemsT_15 = [
+    OrderItem.fromMenuItem(stall4.menuitems[0], 2),
+]
+const orderT_15 = new Order("testuser-015-d91a-4693-b146-b862f80fb215", "199-403", userS0.id, stall4.id, orderitemsT_15, "Spicy", "completed")
+orderT_15.write()
+
+const orderitemsT_16 = [
+    OrderItem.fromMenuItem(stall0.menuitems[0], 1),
+    OrderItem.fromMenuItem(stall0.menuitems[1], 1),
+    OrderItem.fromMenuItem(stall0.menuitems[2], 1),
+]
+const orderT_16 = new Order("testuser-016-d91a-4693-b146-b862f80fb216", "524-768", userS0.id, stall0.id, orderitemsT_16, "All chicken parts", "received")
+orderT_16.write()
+
+const orderitemsT_17 = [
+    OrderItem.fromMenuItem(stall1.menuitems[0], 6),
+    OrderItem.fromMenuItem(stall1.menuitems[1], 6),
+]
+const orderT_17 = new Order("testuser-017-d91a-4693-b146-b862f80fb217", "876-005", userS0.id, stall1.id, orderitemsT_17, "No onions", "preparing")
+orderT_17.write()
+
+const orderitemsT_18 = [
+    OrderItem.fromMenuItem(stall2.menuitems[1], 1),
+    OrderItem.fromMenuItem(stall2.menuitems[2], 1),
+]
+const orderT_18 = new Order("testuser-018-d91a-4693-b146-b862f80fb218", "301-592", userS0.id, stall2.id, orderitemsT_18, "Very spicy", "ready")
+orderT_18.write()
+
+const orderitemsT_19 = [
+    OrderItem.fromMenuItem(stall3.menuitems[0], 3),
+]
+const orderT_19 = new Order("testuser-019-d91a-4693-b146-b862f80fb219", "948-120", userS0.id, stall3.id, orderitemsT_19, "With extra noodles", "completed")
+orderT_19.write()
+
+const orderitemsT_20 = [
+    OrderItem.fromMenuItem(stall4.menuitems[1], 1),
+    OrderItem.fromMenuItem(stall4.menuitems[2], 1),
+]
+const orderT_20 = new Order("testuser-020-d91a-4693-b146-b862f80fb220", "410-675", userS0.id, stall4.id, orderitemsT_20, "Add chili padi", "received")
+orderT_20.write()
