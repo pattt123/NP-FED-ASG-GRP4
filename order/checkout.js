@@ -28,14 +28,14 @@ async function loadCheckout() {
     })();
 
     if (!cartData || cartData.length === 0) {
-        window.location.href = `/browse/hawker.html`;
+        window.location.href = `../`;
         return;
     }
 
     // Get stall from first item in cart (all items should be from same stall)
     const stallId = cartData[0].stall;
     if (!stallId) {
-        window.location.href = `/browse/hawker.html`;
+        window.location.href = `../`;
         return;
     }
 
