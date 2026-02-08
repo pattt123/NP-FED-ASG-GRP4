@@ -26,8 +26,15 @@ async function func() {
         selectedElement.classList.add("selected")
     }
     
+    const ordersComponent = document.getElementById("orders")
+
     const orders = await stall.getAllOrders()
     let orderComponents = ""
+    if (orders.length == 0) {
+        orderComponents = "There are no orders to show!"
+        ordersComponent.innerHTML = orderComponents 
+    }
+
     for (const order of orders) {
         if (filter == "active") {
             if (order.status == "completed") {
@@ -57,9 +64,8 @@ async function func() {
         })
         component = component.replace("%%items%%", items)
         orderComponents = orderComponents + component 
+        ordersComponent.innerHTML = orderComponents 
     }
-    const ordersComponent = document.getElementById("orders")
-    ordersComponent.innerHTML = orderComponents 
 }
 const itemComponent = `
 <span>%%qty%%x %%name%%</span>

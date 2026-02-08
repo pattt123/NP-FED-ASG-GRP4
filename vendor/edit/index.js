@@ -22,6 +22,8 @@ async function func() {
     const descriptionElement = document.getElementById("description")
     descriptionElement.textContent = stall.description
 
+    const itemsElement = document.getElementById("items")
+
     let items = ""
     stall.menuitems.forEach(menuitem => {
         let component = itemComponent.replace("%%id%%", menuitem.id)
@@ -30,9 +32,8 @@ async function func() {
         component = component.replace("%%price%%", menuitem.price)
         component = component.replace("%%image%%", menuitem.image)
         items = items + component
+        itemsElement.innerHTML = items
     })
-    const itemsElement = document.getElementById("items")
-    itemsElement.innerHTML = items
 
     const nameInput = document.getElementById("name")
     nameInput.value = stall.name
