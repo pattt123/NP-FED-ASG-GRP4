@@ -95,6 +95,18 @@ h2 {
     color: White;
     border-radius: 5rem;;
 }
+#editstall {
+    padding: 8px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin:0.2rem;
+    height: fit-content;
+    font-size: var(--font-md);
+    line-height: var(--line-lg);
+    background-color: var(--color-orange-400);
+    color: White;
+    border-radius: 5rem;;
+}
 #login {
     padding: 8px;
     padding-left: 1rem;

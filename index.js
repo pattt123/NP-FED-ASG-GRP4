@@ -40,18 +40,18 @@ async function initializeAuthButtons() {
   try {
     const user = await User.loggedInUser();
     
-    // DEBUG: Log what user object looks like
+    
     console.log("User object:", user);
     console.log("User is null/undefined:", user === null || user === undefined);
     
-    if (user && user.id) {  // Check for actual user ID or relevant property
+    if (user && user.id) {  
       console.log("User is logged in");
-      // User is logged in - show Account Settings
+     
       authButtonsContainer.innerHTML = `
         <a href="../account/index.html" id="accountsettings">Account Settings</a>
       `;
       
-      // If user has a stall, add Edit Stall button
+      
       if (user.stall && user.stall !== "") {
         const editStallButton = document.createElement("a");
         editStallButton.href = "../vendor/edit/index.html";
